@@ -227,7 +227,7 @@ MonoBehaviour:
   speed: 10
   itemHp: 123
   maxItemHp: 3211
-  Bullet: {fileID: 0}
+  Bullet: {fileID: 7461774551572633346, guid: 03712e5338417834286aa788c1285e53, type: 3}
 --- !u!1 &7493405716516427589
 GameObject:
   m_ObjectHideFlags: 0

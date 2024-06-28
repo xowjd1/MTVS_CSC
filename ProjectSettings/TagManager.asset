@@ -9,6 +9,7 @@ TagManager:
   - MapTrigger
   - MapDestroy
   - Collision
+  - Bullet
   layers:
   - Default
   - TransparentFX
