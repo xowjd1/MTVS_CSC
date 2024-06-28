@@ -593,7 +593,7 @@ Transform:
   m_GameObject: {fileID: 1108985344}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 25.21}
+  m_LocalPosition: {x: -2.51, y: 0, z: 25.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -873,13 +873,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509290187}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.30194882, y: -0, z: -0, w: 0.9533242}
-  m_LocalPosition: {x: 0, y: 7.61, z: -2.84}
+  m_LocalRotation: {x: 0.34091592, y: -0, z: -0, w: 0.9400939}
+  m_LocalPosition: {x: 0, y: 6.98, z: -2.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 35.149, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 39.865, y: 0, z: 0}
 --- !u!114 &1509290191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -934,9 +934,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1610096484}
   - component: {fileID: 1610096485}
+  - component: {fileID: 1610096486}
   m_Layer: 9
   m_Name: Collision
-  m_TagString: Untagged
+  m_TagString: Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -950,7 +951,7 @@ Transform:
   m_GameObject: {fileID: 1610096482}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 8.1}
+  m_LocalPosition: {x: 0, y: 0, z: 10.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -977,6 +978,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 11.18, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1610096486
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610096482}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2103585289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,15 +1079,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8224413135784991169, guid: b47a78a59de446946867b7abb0f587e2,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1408868546475993909, guid: b47a78a59de446946867b7abb0f587e2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.78
       objectReference: {fileID: 0}
     - target: {fileID: 1408868546475993909, guid: b47a78a59de446946867b7abb0f587e2,
         type: 3}
@@ -1106,11 +1129,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2562728875933590061, guid: b47a78a59de446946867b7abb0f587e2,
+    - target: {fileID: 7028813799084899448, guid: b47a78a59de446946867b7abb0f587e2,
         type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: '_data._objectReferences.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1610096482}
     - target: {fileID: 8766702298563791821, guid: b47a78a59de446946867b7abb0f587e2,
         type: 3}
       propertyPath: m_Name

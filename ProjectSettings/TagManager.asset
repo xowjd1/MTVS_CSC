@@ -8,6 +8,7 @@ TagManager:
   - TriggerLine
   - MapTrigger
   - MapDestroy
+  - Collision
   layers:
   - Default
   - TransparentFX
