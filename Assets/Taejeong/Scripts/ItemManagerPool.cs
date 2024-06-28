@@ -10,9 +10,9 @@ public class ItemManagerPool : MonoBehaviour
      *  
      */
     public Vector3[] itemManagerPositions = {
-        new Vector3(-5, 0, 50), // x
-        new Vector3(0, 0, 50),  // y
-        new Vector3(5, 0, 50)   // z
+        new Vector3(-5, 1.25f, 50), // x
+        new Vector3(0, 1.25f, 50),  // y
+        new Vector3(5, 1.25f, 50)   // z
     };
 
     public GameObject[] itemManagers;

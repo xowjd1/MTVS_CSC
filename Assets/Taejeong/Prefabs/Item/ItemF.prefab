@@ -117,10 +117,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 172383329504683165}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 304d19d8184b0864d888827cc90208b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  hp: 0
+  itemHp: 0
+  maxItemHp: 0
+  Bullet: {fileID: 0}
