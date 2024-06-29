@@ -7,7 +7,13 @@ public class ItemBox : MonoBehaviour
     /*
      x초마다 스포너에서 소환되서 직선이동만 한다.
      특성 : 스피드, 체력
-     체력이 0이 되면 파괴된다.
+     
+     총알과 충돌할 때
+     itemHp = itemHp - bullet.damage;
+     만약 itemHp <= 0 이라면
+     transform.DetachChildren() 부모-자식 관계를 끊고 자식 오브젝트들을 독립
+     itemBox는 파괴하고 남은 자식오브젝트는 플레이어를 타겟팅하여 이동
+     플레이어와 접촉하면 이펙트를 생성하고 능력치를 부여한다.
 
      카메라 뒤까지 이동하면 파괴.
 
@@ -19,20 +25,25 @@ public class ItemBox : MonoBehaviour
      */
 
     public float speed = 10f; // 속도
-    public int itemHp; // 체력
-    public int maxItemHp; // 아이템 최대체력
+    public int itemHP; // 체력
+    public int maxItemHP; // 아이템 최대체력
     Vector3 dir = Vector3.back; // 이동방향
     bool isHit = false; // 총알에 맞았는지 여부
 
-    public GameObject Bullet;
+    // public GameObject Bullet;
 
+    Bullet bullet;
     Rigidbody rigid;
 
     void Awake()
     {
-        rigid = GetComponent<Rigidbody>();
+        bullet = null; // 초기화할 필요 없음
+    }
 
-        itemHp = maxItemHp; // 스폰될 때 체력은 최대체력으로 설정
+    void OnEnable()
+    { 
+       itemHP = maxItemHP; // 스폰될 때 체력은 최대체력으로 설정
+
     }
 
     void Update()
@@ -46,24 +57,39 @@ public class ItemBox : MonoBehaviour
             Debug.Log("아이템 박스 카메라 뒤로 이동 파괴.");
         }
 
-        /*
+        
          if(isHit)
          {
-          itemHP = itemHP - Bullet의 데미지;
+          itemHP -= bullet.damage;
+            isHit = false; // 데미지를 한번만 받아야하니까 false처리
+            if (itemHP <= 0)
+            {
+                ItemHPMinus();
+            }
          }
           
-          if(itemHP <= 0)
-          이펙트 실행, 파괴한다.
-          자식 오브젝트를 플레이어에게 날린다.
-         */
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Bullet")
+        if (other.CompareTag("Bullet"))
         {
-            isHit = true;
+            bullet = other.GetComponent<Bullet>(); // 충돌한 총알의 Bullet 컴포넌트를 가져옴
+            if (bullet != null)
+            {
+                isHit = true;
+                Debug.Log("Bullet Hit");
+            }
         }
     }
 
+
+    void ItemHPMinus()
+    {
+        //이펙트 실행, 파괴한다.
+        //자식 오브젝트를 플레이어에게 날린다.
+        transform.DetachChildren();
+        Destroy(gameObject);
+
     }
+}

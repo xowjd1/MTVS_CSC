@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 8922129514029035181}
   m_Layer: 0
   m_Name: ItemBox H
-  m_TagString: Untagged
+  m_TagString: ItemBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -225,9 +225,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  itemHp: 123
-  maxItemHp: 3211
-  Bullet: {fileID: 7461774551572633346, guid: 03712e5338417834286aa788c1285e53, type: 3}
+  itemHP: 0
+  maxItemHP: 150
 --- !u!1 &7493405716516427589
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,7 +395,7 @@ PrefabInstance:
     - target: {fileID: 172383329504683165, guid: 83fe09b7ef4183341ae8b761c61d5c81,
         type: 3}
       propertyPath: m_Name
-      value: ItemH
+      value: AbilityItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

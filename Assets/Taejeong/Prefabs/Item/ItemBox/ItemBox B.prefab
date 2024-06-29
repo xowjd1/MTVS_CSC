@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8475413826667239163}
   m_Layer: 0
   m_Name: ItemBox B
-  m_TagString: Untagged
+  m_TagString: ItemBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,9 +123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  itemHp: 0
-  maxItemHp: 1230
-  Bullet: {fileID: 7461774551572633346, guid: 03712e5338417834286aa788c1285e53, type: 3}
+  itemHP: 0
+  maxItemHP: 15
 --- !u!1 &4039930695457189899
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,6 +327,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4251573291492286166}
     m_Modifications:
+    - target: {fileID: -1209764091441604622, guid: ae0b9d29b09ded146ab7104a194d463e,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 89827060433878093, guid: ae0b9d29b09ded146ab7104a194d463e,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -396,7 +400,7 @@ PrefabInstance:
     - target: {fileID: 172383329504683165, guid: ae0b9d29b09ded146ab7104a194d463e,
         type: 3}
       propertyPath: m_Name
-      value: ItemB
+      value: AbilityItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

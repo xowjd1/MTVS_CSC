@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public float time;
 
     [Header("# Player Stat")]
+    public GameObject player;
     public int playerLevel;
     public int kill;
 

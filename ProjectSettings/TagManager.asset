@@ -10,6 +10,9 @@ TagManager:
   - MapDestroy
   - Collision
   - Bullet
+  - Ground
+  - ItemBox
+  - BulletDestroyLine
   layers:
   - Default
   - TransparentFX
