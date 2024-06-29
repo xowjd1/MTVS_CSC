@@ -45,11 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemManagerPositions:
-  - {x: -5, y: 0, z: 50}
-  - {x: 0, y: 0, z: 50}
-  - {x: 5, y: 0, z: 50}
+  - {x: -5, y: 1, z: 50}
+  - {x: 0, y: 1, z: 50}
+  - {x: 5, y: 1, z: 50}
   itemManagers:
   - {fileID: 2500826753219850375, guid: 0e95987ce7668bf46a91b5fe9c7cd458, type: 3}
   - {fileID: 2500826753219850375, guid: fc4adf1946396e64eb648b83c6af4cea, type: 3}
   - {fileID: 2500826753219850375, guid: 9498375b41caa234ba6a773e4e288d5c, type: 3}
-  player: {fileID: 366195041725875836, guid: 32d676b8150085c4c828c9c586ea73ff, type: 3}
+  player: {fileID: 0}

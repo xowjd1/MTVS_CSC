@@ -980,21 +980,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1610114302}
-    - target: {fileID: 1812782905550457359, guid: 9567c43c9fbebbd4d82d2d18e43198a5,
-        type: 3}
-      propertyPath: itemManagerPositions.Array.data[0].y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1812782905550457359, guid: 9567c43c9fbebbd4d82d2d18e43198a5,
-        type: 3}
-      propertyPath: itemManagerPositions.Array.data[1].y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1812782905550457359, guid: 9567c43c9fbebbd4d82d2d18e43198a5,
-        type: 3}
-      propertyPath: itemManagerPositions.Array.data[2].y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8153671677258435630, guid: 9567c43c9fbebbd4d82d2d18e43198a5,
         type: 3}
       propertyPath: m_LocalPosition.x
