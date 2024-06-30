@@ -11,23 +11,30 @@ public class AbilityItemBase : MonoBehaviour
     // 이펙트를 생성하고
     // 플레이어의 능력치나 무기를 교체한다.
 
-    public float speed;
-    public GameObject target;
+    //public GameManager gameManager;
+    public float speed = 20f; // 0.01보다 좀 더 빠르게 조정
+    public float rotSpeed = 100f; // 회전속도
+    public Transform target;
     Vector3 dir;
 
 
     void Awake()
     {
-       
+        
     }
     void Start()
     {
+        
+    }
+    void OnEnable()
+    {
 
     }
 
-
     void Update()
     {
+        transform.Rotate(Vector3.right * rotSpeed * Time.deltaTime); // 아이템 회전
+
         // 부모와 떨어지면
         if (transform.parent == null)
         {
@@ -39,6 +46,5 @@ public class AbilityItemBase : MonoBehaviour
 
         }
     }
-
 
 }

@@ -27,8 +27,10 @@ public class ItemBox : MonoBehaviour
     public float speed = 10f; // 속도
     public int itemHP; // 체력
     public int maxItemHP; // 아이템 최대체력
+    public int boxDamage =1; // 박스와 충돌할때 플레이어가 받을 데미지
     Vector3 dir = Vector3.back; // 이동방향
     bool isHit = false; // 총알에 맞았는지 여부
+    
 
     // public GameObject Bullet;
 

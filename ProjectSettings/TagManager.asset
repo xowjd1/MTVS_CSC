@@ -13,6 +13,8 @@ TagManager:
   - Ground
   - ItemBox
   - BulletDestroyLine
+  - WeaponItem
+  - AbilityItem
   layers:
   - Default
   - TransparentFX

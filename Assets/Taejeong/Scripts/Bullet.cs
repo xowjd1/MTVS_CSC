@@ -6,10 +6,14 @@ public class Bullet : MonoBehaviour
 {
 
     public int damage;
+    public int sgDamage;
     bool isEnemy = false; // 에너미와 충돌했는지 여부
     bool isBox = false; // 아이템 박스와 충돌했는지 여부
     bool isLine = false; // 파괴라인과 충돌했는지 여부
 
+    public bool isShotGunBullet = false; // 샷건 총알인지 여부
+    public float speed;
+    Vector3 dir = Vector3.forward;
  
     
     void Update()
@@ -21,6 +25,12 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         if (isLine)
             Destroy(gameObject);
+
+        if (isShotGunBullet)
+        {
+            transform.position += speed * dir * Time.deltaTime;        
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)

@@ -22,7 +22,7 @@ public class DoubleGun : MonoBehaviour
             // 이펙트 생성
 
             // target의 자식오브젝트로 걸려있는 DoubleGun SetActive(true)
-            Transform dgun = GameObject.Find("Player").transform.GetChild(2);
+            Transform dgun = GameObject.Find("Player").transform.GetChild(3);
             if (dgun != null)
             {
                 

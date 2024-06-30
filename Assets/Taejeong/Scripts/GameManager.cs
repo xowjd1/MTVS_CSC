@@ -11,12 +11,16 @@ public class GameManager : MonoBehaviour
 
     [Header("# Player Stat")]
     public GameObject player;
+    //public int playerLife = 1;
     public int playerLevel;
     public int kill;
 
 
     [Header("# GameObject Manager")]
     public ItemManagerPool itemPool;
+
+
+    //bool isPlayerHit = false; 
     
 
     private void Awake()
