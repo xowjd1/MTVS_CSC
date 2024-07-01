@@ -14,7 +14,7 @@ public class AbilityItemBase : MonoBehaviour
     //public GameManager gameManager;
     public float speed = 20f; // 0.01보다 좀 더 빠르게 조정
     public float rotSpeed = 100f; // 회전속도
-    public Transform target;
+    public GameObject target;
     Vector3 dir;
 
 
