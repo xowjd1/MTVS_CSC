@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2196160532438008136}
   - component: {fileID: 8798622529122384819}
   - component: {fileID: -495659934267666630}
+  - component: {fileID: 2150098527647891703}
   m_Layer: 0
   m_Name: ItemF
   m_TagString: WeaponItem
@@ -122,8 +123,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3737272332fb7bd4285360d1b2eaa205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  value: 4
+  gameManager: {fileID: -1970710315514739076, guid: f455b7da6a2af404a9e19d6e3e57ddfb,
+    type: 3}
   speed: 20
   rotSpeed: 100
-  target: {fileID: 366195041725875836, guid: 32d676b8150085c4c828c9c586ea73ff, type: 3}
+  target: {fileID: 6252143223826423190, guid: 32d676b8150085c4c828c9c586ea73ff, type: 3}
+--- !u!114 &2150098527647891703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172383329504683165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c6c9e10493696146a0f7d3c69529ce5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

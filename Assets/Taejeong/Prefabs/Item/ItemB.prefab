@@ -151,9 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325c88b615f7110489c606d96240c8c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: -1970710315514739076, guid: f455b7da6a2af404a9e19d6e3e57ddfb,
-    type: 3}
-  target: {fileID: 366195041725875836, guid: 32d676b8150085c4c828c9c586ea73ff, type: 3}
 --- !u!114 &-1456650466472030142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,4 +167,4 @@ MonoBehaviour:
     type: 3}
   speed: 20
   rotSpeed: 100
-  target: {fileID: 366195041725875836, guid: 32d676b8150085c4c828c9c586ea73ff, type: 3}
+  target: {fileID: 6252143223826423190, guid: 32d676b8150085c4c828c9c586ea73ff, type: 3}

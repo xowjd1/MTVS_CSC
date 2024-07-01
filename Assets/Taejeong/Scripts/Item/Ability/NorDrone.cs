@@ -2,18 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoubleGun : MonoBehaviour
+public class NorDrone : MonoBehaviour
 {
-    // public GameManager gameManager;
-    // Player player;
-    // public GameObject target;
-
-    void Awake()
-    {
-
-    }
-
-
 
     void OnTriggerEnter(Collider other)
     {
@@ -22,13 +12,12 @@ public class DoubleGun : MonoBehaviour
             // 이펙트 생성
 
             // target의 자식오브젝트로 걸려있는 DoubleGun SetActive(true)
-            Transform ngun = GameObject.Find("Player").transform.GetChild(0);
-            Transform dgun = GameObject.Find("Player").transform.GetChild(1);
-            if (dgun != null && ngun != null)
+
+            Transform ndrone = GameObject.Find("Player").transform.GetChild(2);
+
+            if (ndrone != null)
             {
-                
-                dgun.gameObject.SetActive(true);
-                ngun.gameObject.SetActive(false);
+                ndrone.gameObject.SetActive(true);
             }
             else
             {
@@ -39,5 +28,4 @@ public class DoubleGun : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-
 }
