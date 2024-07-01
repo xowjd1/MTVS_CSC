@@ -5,12 +5,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public Player player;
 
     [Header("# GameControl")]
     public float time;
 
     [Header("# Player Stat")]
-    public GameObject player;
     //public int playerLife = 1;
     public int playerLevel;
     public int kill;

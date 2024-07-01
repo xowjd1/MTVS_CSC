@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHit : MonoBehaviour
 {
-    public GameObject player;
+    public Player player;
     //public GameManager gameManager;
     ItemBox itemBox;
 

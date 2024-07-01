@@ -5,12 +5,12 @@ using UnityEngine;
 public class DoubleGun : MonoBehaviour
 {
     public GameManager gameManager;
+    Player player;
     public GameObject target;
 
     void Start()
     {
-        target = gameManager.player;
-
+        //target = gameManager.in
     }
 
 
