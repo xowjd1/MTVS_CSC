@@ -17,6 +17,8 @@ public class FirePosition : MonoBehaviour
     void Start()
     {
         // bulletSpawnTime 은 플레이어의 bsTime 이다.
+        isShotGun = GameManager.instance.isShotGun;
+        isShotGunFive = GameManager.instance.isShotGun5;
         bulletSpawnTime = player.bsTime;
     }
 
@@ -24,6 +26,8 @@ public class FirePosition : MonoBehaviour
     {
         // bulletSpawnTime 은 플레이어의 bsTime 이다. 실시간 업데이트
         bulletSpawnTime = player.bsTime;
+        isShotGun = GameManager.instance.isShotGun;
+        isShotGunFive = GameManager.instance.isShotGun5;
 
         currentTime += Time.deltaTime;
 
@@ -31,12 +35,10 @@ public class FirePosition : MonoBehaviour
         {
             if (isShotGun)
             {
-                isShotGun = false;
                 SGFire();
             }
             if(isShotGunFive)
             {
-                isShotGun = false;
                 SGFireFIve();
             }
             else

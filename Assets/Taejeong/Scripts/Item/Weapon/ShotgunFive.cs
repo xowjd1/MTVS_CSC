@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShotgunFive : MonoBehaviour
 {
+    public GameManager gameManager;
     FirePosition firePosition;
     void OnTriggerEnter(Collider other)
     {
@@ -20,7 +21,7 @@ public class ShotgunFive : MonoBehaviour
                 shotGun3.gameObject.SetActive(true);
 
                 //FirePosition의 isShotGunFive 를 true로 바꿔준다.
-                firePosition.isShotGunFive = true;
+               GameManager.instance.isShotGun5 = true;
             }
             else
             {

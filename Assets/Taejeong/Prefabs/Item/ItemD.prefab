@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2196160532438008136}
   - component: {fileID: 8798622529122384819}
   - component: {fileID: -3768127588222366633}
+  - component: {fileID: 8276078418902021928}
   - component: {fileID: 2730809864134655302}
   m_Layer: 0
   m_Name: ItemD
@@ -127,6 +128,33 @@ MonoBehaviour:
   speed: 20
   rotSpeed: 100
   target: {fileID: 6252143223826423190, guid: 32d676b8150085c4c828c9c586ea73ff, type: 3}
+--- !u!54 &8276078418902021928
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172383329504683165}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &2730809864134655302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,3 +167,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61495c95024a6724cb6770dd8272b704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}

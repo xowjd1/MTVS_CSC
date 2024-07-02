@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     [Header("★ 플레이어 스탯")]
     //public int playerLife = 1;
     public int kill;
+    public bool isShotGun = false;
+    public bool isShotGun5 = false;
 
     [Header("★ 게임 시스템 매니저")]
     public float time;
@@ -39,7 +41,10 @@ public class GameManager : MonoBehaviour
    
     void Update()
     {
-        
+        if(isShotGun5)
+        {
+            isShotGun = false;
+        }
     }
 
     void GameStart()

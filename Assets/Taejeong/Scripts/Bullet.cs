@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
     bool isBox = false; // 아이템 박스와 충돌했는지 여부
     bool isLine = false; // 파괴라인과 충돌했는지 여부
 
-    public bool isShotGunBullet = false; // 샷건 총알인지 여부
+    //public bool isShotGunBullet = false; // 샷건 총알인지 여부
 
     public float speed; // 총알 속도
     public Vector3 dir = Vector3.forward; // 방향은 앞으로
@@ -22,8 +22,8 @@ public class Bullet : MonoBehaviour
     {
         // 총알 데미지는 GameManager의 인스턴스의 damage다 실시간 업데이트
         bDamage = GameManager.instance.damage;
-       // bsgDamage = GameManager.instance.sgDamage;
-        if(isShotGunBullet)
+        // bsgDamage = GameManager.instance.sgDamage;
+        if (GameManager.instance.isShotGun || GameManager.instance.isShotGun5)
         {
             //firePosition.isShotGun = true;
             

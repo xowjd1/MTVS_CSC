@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shotgun : MonoBehaviour
 {
+    public GameManager gameManager;
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -17,6 +18,7 @@ public class Shotgun : MonoBehaviour
                 ngun.gameObject.SetActive(false);
                 dgun.gameObject.SetActive(false);
                 shotGun3.gameObject.SetActive(true);
+                GameManager.instance.isShotGun = true;
             }
             else
             {
