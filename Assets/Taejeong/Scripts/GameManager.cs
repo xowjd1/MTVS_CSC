@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
 
     [Header("# Player Stat")]
     //public int playerLife = 1;
+    public float bsTime = 0.5f;
+    public int damage = 10;
+    public int sgDamage = 12;
     public int playerLevel;
     public int kill;
 

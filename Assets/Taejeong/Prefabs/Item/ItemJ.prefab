@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 7910671555069525877}
   - component: {fileID: 2196160532438008136}
   - component: {fileID: 8798622529122384819}
-  - component: {fileID: -8650673344674467571}
-  - component: {fileID: -8428814735583151842}
+  - component: {fileID: -495659934267666630}
+  - component: {fileID: -6368225595618663223}
   m_Layer: 0
-  m_Name: ItemA
-  m_TagString: Untagged
+  m_Name: ItemJ
+  m_TagString: DamageUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 40154fe84ae239044a554396023729bf, type: 2}
+  - {fileID: 2100000, guid: 286d3ac81e28d15439262732f6a3d9a5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -103,7 +103,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -111,22 +111,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-8650673344674467571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 172383329504683165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
---- !u!114 &-8428814735583151842
+--- !u!114 &-495659934267666630
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +123,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3737272332fb7bd4285360d1b2eaa205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  speed: 0
+  gameManager: {fileID: -1970710315514739076, guid: f455b7da6a2af404a9e19d6e3e57ddfb,
+    type: 3}
+  speed: 20
   rotSpeed: 100
   target: {fileID: 6252143223826423190, guid: 32d676b8150085c4c828c9c586ea73ff, type: 3}
+--- !u!114 &-6368225595618663223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172383329504683165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc319cf4ddc8684f8f6d7125e11bb35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageUpCount: 5

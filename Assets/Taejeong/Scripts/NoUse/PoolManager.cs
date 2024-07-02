@@ -11,7 +11,6 @@ public class PoolManager : MonoBehaviour
 
     아이템이 소환될 시간에는 에너미는 소환되지 않는다.
     보스 에너미가 소환되면 에너미와 아이템의 소환을 정지한다.
-
     */
 
     public float enemyTime = 2.0f;

@@ -39,20 +39,20 @@ public class Bullet : MonoBehaviour
         if (other.tag == "Enemy")
         {
             isEnemy = true; // 에너미와 충돌했으니 true 전환
-            Debug.Log("불렛 - 에너미 충돌"); // 확인용 콘솔메세지 출력
+           // Debug.Log("불렛 - 에너미 충돌"); // 확인용 콘솔메세지 출력
         }
         // 닿은 태그가 ItemBox 라면 ( 아이템 박스와의 상호작용)
         if (other.tag == "ItemBox")
         {
             isBox = true; // 아이템박스와 충돌했으니 true 전환
-            Debug.Log("불렛 - 아이템박스 충돌"); // 확인용 콘솔메세지 출력
+          //  Debug.Log("불렛 - 아이템박스 충돌"); // 확인용 콘솔메세지 출력
 
         }
         // 닿은 태그가 BulletDestroyLine 라면 ( 일정거리 이상 넘어갔을 때 불렛 삭제 )
         if (other.tag == "BulletDestroyLine")
         {
             isLine = true; // 파괴라인과 충돌했으니 true 전환
-            Debug.Log("불렛 - 파괴라인 충돌"); // 확인용 콘솔메세지 출력
+          //  Debug.Log("불렛 - 파괴라인 충돌"); // 확인용 콘솔메세지 출력
 
         }
 

@@ -15,6 +15,9 @@ TagManager:
   - BulletDestroyLine
   - WeaponItem
   - AbilityItem
+  - LifeUp
+  - FireSpeedUp
+  - DamageUp
   layers:
   - Default
   - TransparentFX

@@ -122,8 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3737272332fb7bd4285360d1b2eaa205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  value: 2
+  gameManager: {fileID: 0}
   speed: 20
   rotSpeed: 100
-  target: {fileID: 366195041725875836, guid: 32d676b8150085c4c828c9c586ea73ff, type: 3}
+  target: {fileID: 6252143223826423190, guid: 32d676b8150085c4c828c9c586ea73ff, type: 3}
