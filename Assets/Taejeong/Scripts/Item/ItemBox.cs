@@ -30,11 +30,13 @@ public class ItemBox : MonoBehaviour
     public int boxDamage =1; // 박스와 충돌할때 플레이어가 받을 데미지
     Vector3 dir = Vector3.back; // 이동방향
     bool isHit = false; // 총알에 맞았는지 여부
-    
+    bool isDroneHit = false; // 드론총알에 맞았는지 여부
+
 
     // public GameObject Bullet;
 
     Bullet bullet;
+    DroneBullet dBullet;
     Rigidbody rigid;
 
     void OnEnable()
@@ -54,8 +56,8 @@ public class ItemBox : MonoBehaviour
             Debug.Log("아이템 박스 카메라 뒤로 이동 파괴.");
         }
 
-        
-         if(isHit)
+       
+        if (isHit)
          {
           itemHP -= bullet.bDamage;
             isHit = false; // 데미지를 한번만 받아야하니까 false처리
@@ -65,7 +67,18 @@ public class ItemBox : MonoBehaviour
                 ItemHPMinus(); // 이벤트(함수)를 불러온다.
             }
          }
-          
+        if (isDroneHit)
+        {
+            itemHP -= dBullet.damage;
+            isDroneHit = false; // 데미지를 한번만 받아야하니까 false처리
+            //itemHP 가 0 이하가 되면
+            if (itemHP <= 0)
+            {
+                ItemHPMinus(); // 이벤트(함수)를 불러온다.
+            }
+        }
+
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -78,6 +91,16 @@ public class ItemBox : MonoBehaviour
             {
                 isHit = true;
                 Debug.Log("Bullet Hit");
+            }
+        }
+        if (other.CompareTag("DroneBullet"))
+        {
+            // 충돌한 총알의 Bullet 컴포넌트를 가져옴
+            dBullet = other.GetComponent<DroneBullet>();
+            if (dBullet != null)
+            {
+                isDroneHit = true;
+                Debug.Log("DBullet Hit");
             }
         }
     }

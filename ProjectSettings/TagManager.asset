@@ -18,6 +18,7 @@ TagManager:
   - LifeUp
   - FireSpeedUp
   - DamageUp
+  - DroneBullet
   layers:
   - Default
   - TransparentFX
