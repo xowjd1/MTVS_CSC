@@ -318,7 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   itemHP: 0
-  maxItemHP: 15
+  maxItemHP: 1500
   boxDamage: 1
 --- !u!1001 &1551106153007433800
 PrefabInstance:

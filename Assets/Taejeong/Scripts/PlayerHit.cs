@@ -6,7 +6,7 @@ public class PlayerHit : MonoBehaviour
 {
 
     public Player player;
-    //public GameManager gameManager;
+    public GameManager gameManager;
     ItemBox itemBox;
     Bullet bullet;
     DamageUp damageUp;
@@ -16,10 +16,9 @@ public class PlayerHit : MonoBehaviour
 
     public int playerLife;
     public int playerMaxLife = 1;
-    public float bsTime = 0.5f;
+    public float bsTime = 0.5f; 
     public float fSpeedUp = 0.1f;
-    public int damage = 10;
-    public int sgDamage = 10;
+   
 
     bool isPlayerHit = false;
     bool isLifeUp = false;
@@ -60,8 +59,8 @@ public class PlayerHit : MonoBehaviour
         }
         if(isDamageUp)
         {
-            damage += damageUp.damageUpCount;
-            sgDamage += damageUp.damageUpCount;
+            GameManager.instance.damage += damageUp.damageUpCount;
+            GameManager.instance.sgDamage += damageUp.damageUpCount;
             isDamageUp = false;
         }
     }

@@ -4,7 +4,5 @@ using UnityEngine;
 
 public class FireSpeedUp : MonoBehaviour
 {
-    public float fireSpeedUpCount = 0.2f;
-
-
+    public float fireSpeedUpCount = 0.2f; // 공속 증가량
 }

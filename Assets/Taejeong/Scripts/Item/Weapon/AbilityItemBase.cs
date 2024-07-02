@@ -14,26 +14,20 @@ public class AbilityItemBase : MonoBehaviour
     public GameManager gameManager;
     public float speed = 20f; // 0.01보다 좀 더 빠르게 조정
     public float rotSpeed = 100f; // 회전속도
-    public Rigidbody target;
+    public Rigidbody target; // 타겟
     Vector3 dir;
 
 
-    void Awake()
-    {
-       
-    }
-    void Start()
-    {
-        
-    }
     void OnEnable()
     {
+        // 타겟은 GameManager의 인스턴스 player고 rigidbody로 바꿔준다.
         target = GameManager.instance.player.GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        transform.Rotate(Vector3.right * rotSpeed * Time.deltaTime); // 아이템 회전
+        // 아이템 오른쪽 회전
+        transform.Rotate(Vector3.right * rotSpeed * Time.deltaTime); 
 
         // 부모와 떨어지면
         if (transform.parent == null)

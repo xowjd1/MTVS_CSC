@@ -37,11 +37,6 @@ public class ItemBox : MonoBehaviour
     Bullet bullet;
     Rigidbody rigid;
 
-    void Awake()
-    {
-        bullet = null; // 초기화할 필요 없음
-    }
-
     void OnEnable()
     { 
        itemHP = maxItemHP; // 스폰될 때 체력은 최대체력으로 설정
@@ -62,11 +57,12 @@ public class ItemBox : MonoBehaviour
         
          if(isHit)
          {
-          itemHP -= bullet.damage;
+          itemHP -= bullet.bDamage;
             isHit = false; // 데미지를 한번만 받아야하니까 false처리
+            //itemHP 가 0 이하가 되면
             if (itemHP <= 0)
             {
-                ItemHPMinus();
+                ItemHPMinus(); // 이벤트(함수)를 불러온다.
             }
          }
           
@@ -76,7 +72,8 @@ public class ItemBox : MonoBehaviour
     {
         if (other.CompareTag("Bullet"))
         {
-            bullet = other.GetComponent<Bullet>(); // 충돌한 총알의 Bullet 컴포넌트를 가져옴
+            // 충돌한 총알의 Bullet 컴포넌트를 가져옴
+            bullet = other.GetComponent<Bullet>(); 
             if (bullet != null)
             {
                 isHit = true;
@@ -89,7 +86,7 @@ public class ItemBox : MonoBehaviour
     void ItemHPMinus()
     {
         //이펙트 실행, 파괴한다.
-        //자식 오브젝트를 플레이어에게 날린다.
+        //자식 오브젝트 분리.
         transform.DetachChildren();
         Destroy(gameObject);
 

@@ -194,7 +194,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d9725de846365b498f4d9244985152c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
-  sgDamage: 0
+  gameManager: {fileID: -1970710315514739076, guid: f455b7da6a2af404a9e19d6e3e57ddfb,
+    type: 3}
+  bDamage: 0
+  bsgDamage: 0
   isShotGunBullet: 0
   speed: 0

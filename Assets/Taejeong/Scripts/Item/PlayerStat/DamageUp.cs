@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class DamageUp : MonoBehaviour
 {
-    public int damageUpCount = 5;
+    public int damageUpCount = 100;
 }

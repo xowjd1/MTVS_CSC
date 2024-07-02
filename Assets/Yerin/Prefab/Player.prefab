@@ -268,8 +268,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 366195041725875836}
+  gameManager: {fileID: -1970710315514739076, guid: f455b7da6a2af404a9e19d6e3e57ddfb,
+    type: 3}
   playerLife: 0
   playerMaxLife: 1
+  bsTime: 0.5
+  fSpeedUp: 0.1
 --- !u!1 &404456691606474458
 GameObject:
   m_ObjectHideFlags: 0

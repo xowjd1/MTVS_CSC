@@ -4,20 +4,37 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-
-    public int damage;
-    public int sgDamage;
+    public GameManager gameManager;
+    public int bDamage; // 총알 데미지
+    public FirePosition firePosition;
+    //public int bsgDamage; // 샷건 데미지
     bool isEnemy = false; // 에너미와 충돌했는지 여부
     bool isBox = false; // 아이템 박스와 충돌했는지 여부
     bool isLine = false; // 파괴라인과 충돌했는지 여부
 
     public bool isShotGunBullet = false; // 샷건 총알인지 여부
-    public float speed;
-    Vector3 dir = Vector3.forward;
- 
-    
+
+    public float speed; // 총알 속도
+    public Vector3 dir = Vector3.forward; // 방향은 앞으로
+
+
     void Update()
     {
+        // 총알 데미지는 GameManager의 인스턴스의 damage다 실시간 업데이트
+        bDamage = GameManager.instance.damage;
+       // bsgDamage = GameManager.instance.sgDamage;
+        if(isShotGunBullet)
+        {
+            //firePosition.isShotGun = true;
+            
+            speed = 5;
+            transform.position += dir * speed * Time.deltaTime;
+                
+            // 90도 돌려서 회전
+            transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+            bDamage = GameManager.instance.sgDamage;
+        }
+
         //충돌했다면 총알을 파괴한다.
         if (isEnemy)
             Destroy(gameObject); 
@@ -25,11 +42,6 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         if (isLine)
             Destroy(gameObject);
-
-        if (isShotGunBullet)
-        {
-            transform.position += speed * dir * Time.deltaTime;        
-        }
 
     }
 

@@ -7,20 +7,16 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public Player player;
 
-    [Header("# GameControl")]
-    public float time;
-
-    [Header("# Player Stat")]
-    //public int playerLife = 1;
-    public float bsTime = 0.5f;
+    [Header("★ 총알 기본 데미지")]
     public int damage = 10;
     public int sgDamage = 12;
-    public int playerLevel;
+    [Header("★ 플레이어 스탯")]
+    //public int playerLife = 1;
     public int kill;
 
-
-    [Header("# GameObject Manager")]
-    public ItemManagerPool itemPool;
+    [Header("★ 게임 시스템 매니저")]
+    public float time;
+   
 
 
     //bool isPlayerHit = false; 
