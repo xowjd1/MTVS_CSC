@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8041620508075656319}
   - component: {fileID: 4536004450172290844}
   - component: {fileID: -3154882557891680470}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -197,6 +197,6 @@ MonoBehaviour:
   gameManager: {fileID: -1970710315514739076, guid: f455b7da6a2af404a9e19d6e3e57ddfb,
     type: 3}
   bDamage: 0
-  bsgDamage: 0
-  isShotGunBullet: 0
+  firePosition: {fileID: 0}
   speed: 0
+  dir: {x: 0, y: 0, z: 1}
