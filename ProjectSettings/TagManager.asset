@@ -15,10 +15,7 @@ TagManager:
   - BulletDestroyLine
   - WeaponItem
   - AbilityItem
-  - LifeUp
-  - FireSpeedUp
-  - DamageUp
-  - DroneBullet
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -30,7 +27,7 @@ TagManager:
   - Boss
   - Plane
   - Collision
-  - 
+  - Bullet
   - 
   - 
   - 
