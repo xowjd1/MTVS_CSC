@@ -5,12 +5,8 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Missile : MonoBehaviour
 {
-    // 각 미사일에 대해 가장 가까운 타겟 찾기
+    MissileFirePosition mFirePosition;   
     public float speed;
-    public float radius = 0f;
-    public LayerMask layer;
-    public Collider[] colliders;
-    public Collider short_enemy;
 
     bool isEnemy = false; // 에너미와 충돌했는지 여부
     bool isBox = false; // 아이템 박스와 충돌했는지 여부
@@ -23,29 +19,8 @@ public class Missile : MonoBehaviour
 
     void Update()
     {
-        colliders = Physics.OverlapSphere(transform.position, radius, layer);
-
-        if (colliders.Length == 0)
-            return;
-
-        if (colliders.Length > 0)
-        {
-            float short_distance = Vector3.Distance(transform.position, colliders[0].transform.position);
-            foreach (Collider col in colliders)
-            {
-                float short_distance2 = Vector3.Distance(transform.position, col.transform.position);
-                if (short_distance > short_distance2)
-                {
-                    short_distance = short_distance2;
-                    short_enemy = col;
-                }
-            }
-
-        }
-        if (colliders.Length >0 && short_enemy != null)
-        {
-            transform.position += (short_enemy.transform.position - transform.position).normalized * speed * Time.deltaTime;
-        }
+       // transform.position += mFirePosition.nearestEnemy.transform.position - transform.position * speed * Time.deltaTime;
+     
         //충돌했다면 총알을 파괴한다.
         if (isEnemy)
             Destroy(gameObject);
@@ -55,12 +30,7 @@ public class Missile : MonoBehaviour
             Destroy(gameObject);
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, radius);
-    }
-
+  
     private void OnTriggerEnter(Collider other)
     {
         // 닿은 태그가 Enemy 라면 ( 에너미와의 상호작용)

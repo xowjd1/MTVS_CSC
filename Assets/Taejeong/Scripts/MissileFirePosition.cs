@@ -4,24 +4,28 @@ using UnityEngine;
 
 public class MissileFirePosition : MonoBehaviour
 {
+    // 가장 가까운 에너미를 감지한다
+    // 에너미를 감지했다면 발사한다.
+    // 에너미를 감지할때 총구 앞쪽만 감지하도록 한다.
+    // 감지한 가장 가까운 에너미를 총알에게 알려준다.
+
     public GameObject missileFactory;
     public float missileSpawnTime; // 총알 발사 주기 시간
     public float detectionRadius; // 적을 감지할 반경
     public LayerMask targetLayer; // 타겟으로 삼을 레이어
     private float currentTime;
 
+
+    
     void Update()
     {
         currentTime += Time.deltaTime;
 
-        // 일정 주기마다 발사
-        if (currentTime >= missileSpawnTime)
+        // 일정 주기마다, 에너미를 감지했다면 발사
+        if (currentTime >= missileSpawnTime  && ShouldFire())
         {
-            // 발사할 조건을 체크하고 발사
-            if (ShouldFire())
-            {
                 Fire();
-            }
+
             currentTime = 0;
         }
     }
