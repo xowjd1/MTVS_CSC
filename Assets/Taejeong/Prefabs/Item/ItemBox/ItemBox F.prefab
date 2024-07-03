@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5794905470860119650}
   - component: {fileID: 7714066955099392295}
   - component: {fileID: 6178662499978979013}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ItemBox F
   m_TagString: ItemBox
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ MonoBehaviour:
   speed: 10
   itemHP: 0
   maxItemHP: 0
-  Bullet: {fileID: 7461774551572633346, guid: 03712e5338417834286aa788c1285e53, type: 3}
+  boxDamage: 1
 --- !u!1 &3546853315574846418
 GameObject:
   m_ObjectHideFlags: 0
