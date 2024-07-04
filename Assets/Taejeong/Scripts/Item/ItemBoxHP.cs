@@ -18,6 +18,7 @@ public class ItemBoxHP : MonoBehaviour
     
     void Update()
     {
+        //Text랑 hp 연동
         itemBoxHP.text = itemBox.itemHP.ToString();
 
         //HP가 0이하가 된다면 UI도 없애기

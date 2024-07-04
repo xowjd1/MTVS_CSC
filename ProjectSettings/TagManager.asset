@@ -16,6 +16,11 @@ TagManager:
   - WeaponItem
   - AbilityItem
   - Boss
+  - DroneBullet
+  - FireSpeedUp
+  - LifeUp
+  - DamageUp
+  - ItemBoxChangeLayerLine
   layers:
   - Default
   - TransparentFX

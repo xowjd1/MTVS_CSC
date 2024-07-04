@@ -10,57 +10,93 @@ public class MissileFirePosition : MonoBehaviour
     // 에너미를 감지할때 총구 앞쪽만 감지하도록 한다.
     // 감지한 가장 가까운 에너미를 총알에게 알려준다.
 
-    public GameObject missileFactory;
-    public float missileSpawnTime; // 총알 발사 주기 시간
-    public float radius = 0f;
-    public Collider[] colliders;
-    public Collider nearestEnemy;
-    public LayerMask targetLayer; // 타겟으로 삼을 레이어
-    private float currentTime;
+    public GameObject missileFactory; // 미사일 프리팹.
+    public GameObject target; // 도착 지점.
+    float currentTime;
+    public float fireTime =1;
 
-    
-    void Update()
+
+    [Header("미사일 기능")]
+    public float speed = 2; // 미사일 속도.
+    public float distanceFromStart = 1.0f; // 시작 지점을 기준으로 얼마나 꺾일지.
+    public float distanceFromEnd = 5.0f; // 도착 지점을 기준으로 얼마나 꺾일지.
+    public int shotCount = 3; // 총 몇 개 발사할건지.
+    [Range(0, 1)] public float interval = 0.15f;
+    public int shotCountEveryInterval = 1; // 한번에 몇 개씩 발사할건지.
+
+    public float radius; // 감지 반경
+
+
+    private void Update()
     {
         currentTime += Time.deltaTime;
 
-
-        colliders = Physics.OverlapSphere(transform.position, radius, targetLayer);
-
-        if (colliders.Length > 0)
+        if (currentTime >= fireTime)
         {
-            float short_distance = Vector3.Distance(transform.position, colliders[0].transform.position);
-            foreach (Collider col in colliders)
+            // 가장 가까운 적 찾기
+            GameObject closestEnemy = FindClosestEnemy();
+
+            if (closestEnemy != null)
             {
-                float short_distance2 = Vector3.Distance(transform.position, col.transform.position);
-                if (short_distance > short_distance2)
-                {
-                    short_distance = short_distance2;
-                    nearestEnemy = col;
-                }
+                target = closestEnemy;
+                CreateMissile();
             }
-
-        }
-
-        // 일정 주기마다, 에너미를 감지했다면 발사
-        if (currentTime >= missileSpawnTime && nearestEnemy != null)
-        {
-                Fire();
-            Debug.Log("MissileFire");
 
             currentTime = 0;
         }
     }
-   
-    void Fire()
+
+    void CreateMissile()
     {
+        int _shotCount = shotCount;
+        while (_shotCount > 0)
+        {
+            for (int i = 0; i < shotCountEveryInterval; i++)
+            {
+                if (target.transform.position.z > 2f)
+                {
+                    GameObject missile = Instantiate(missileFactory);
+                    missile.GetComponent<Missile>().Init(this.gameObject.transform, target.transform, speed, distanceFromStart, distanceFromEnd);
+                }
+                else
+                {
+                    Debug.Log("Target's z position is too low to fire!");
+                }
 
-        // 총알을 현재 스폰 포인트에서 소환
-        GameObject missile = Instantiate(missileFactory, transform.position, Quaternion.identity);
+                _shotCount--;
+            }
+            
+        new WaitForSeconds(interval);
+        }
+    }
+    GameObject FindClosestEnemy()
+    {
+        LayerMask enemyLayerMask = LayerMask.GetMask("Enemy"); // "Enemy" 레이어에 해당하는 레이어 마스크 가져오기
 
+        Collider[] colliders = Physics.OverlapSphere(transform.position, radius, enemyLayerMask); // 현재 위치 주변의 "Enemy" 레이어에 해당하는 콜라이더들 가져오기
+
+        GameObject closestEnemy = null;
+        float closestDistance = Mathf.Infinity;
+        Vector3 currentPosition = transform.position;
+
+        foreach (Collider collider in colliders)
+        {
+            GameObject enemyGameObject = collider.gameObject;
+
+            float distance = Vector3.Distance(enemyGameObject.transform.position, currentPosition);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestEnemy = enemyGameObject;
+            }
+        }
+
+        return closestEnemy;
     }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, radius);
     }
+
 }
