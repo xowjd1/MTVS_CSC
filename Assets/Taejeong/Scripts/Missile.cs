@@ -5,8 +5,13 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Missile : MonoBehaviour
 {
-    MissileFirePosition mFirePosition;   
+    public MissileFirePosition mFirePosition;   
     public float speed;
+    public Collider target;
+    public Enemy enemy;
+    public ItemBox itemBox;
+    
+    
 
     bool isEnemy = false; // 에너미와 충돌했는지 여부
     bool isBox = false; // 아이템 박스와 충돌했는지 여부
@@ -14,12 +19,18 @@ public class Missile : MonoBehaviour
 
     void Start()
     {
+        mFirePosition = GetComponent<MissileFirePosition>();
+
+        target = mFirePosition.nearestEnemy;
 
     }
 
     void Update()
     {
-       // transform.position += mFirePosition.nearestEnemy.transform.position - transform.position * speed * Time.deltaTime;
+        if(target != null)
+        {
+            transform.position += target.transform.position - transform.position * speed * Time.deltaTime;
+        }
      
         //충돌했다면 총알을 파괴한다.
         if (isEnemy)
