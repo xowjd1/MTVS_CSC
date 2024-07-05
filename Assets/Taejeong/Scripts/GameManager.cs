@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public int mgDamage = 3;
     [Header("★ 플레이어 스탯")]
     public int kill;
+    public int hasGrenades; // 수류탄 개수
     public bool isShotGun = false;
     public bool isShotGun5 = false;
     public bool isShotGunEnd = false;
@@ -30,7 +31,10 @@ public class GameManager : MonoBehaviour
     }
 
 
-
+    public void UpdateGrenadeCount(int count)
+    {
+        hasGrenades = count;
+    }
 
 
     void Start()

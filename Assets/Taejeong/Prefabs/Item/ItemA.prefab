@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7910671555069525877}
   - component: {fileID: 2196160532438008136}
   - component: {fileID: 8798622529122384819}
-  - component: {fileID: -8650673344674467571}
   - component: {fileID: -8428814735583151842}
   m_Layer: 0
   m_Name: ItemA
@@ -111,21 +110,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-8650673344674467571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 172383329504683165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
 --- !u!114 &-8428814735583151842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,3 +126,5 @@ MonoBehaviour:
   speed: 0
   rotSpeed: 100
   target: {fileID: 6252143223826423190, guid: 32d676b8150085c4c828c9c586ea73ff, type: 3}
+  gameOverDummy: {fileID: 4686506476132452, guid: 8499fae1fa738044da167505851cfe82,
+    type: 3}

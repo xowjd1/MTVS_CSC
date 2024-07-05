@@ -128,6 +128,8 @@ MonoBehaviour:
   speed: 20
   rotSpeed: 100
   target: {fileID: 6252143223826423190, guid: 32d676b8150085c4c828c9c586ea73ff, type: 3}
+  gameOverDummy: {fileID: 4686506476132452, guid: 8499fae1fa738044da167505851cfe82,
+    type: 3}
 --- !u!114 &3275005744383676948
 MonoBehaviour:
   m_ObjectHideFlags: 0

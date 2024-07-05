@@ -15,21 +15,20 @@ public class AbilityItemBase : MonoBehaviour
     public float speed = 20f; // 0.01보다 좀 더 빠르게 조정
     public float rotSpeed = 100f; // 회전속도
     public Rigidbody target; // 타겟
+    public Rigidbody gameOverDummy; // 게임오버용 더미
     Vector3 dir;
 
 
-    void OnEnable()
-    {
-        Player player = GetComponent<Player>();
-        if (player != null)
-        {
-            target = GameManager.instance.player.GetComponent<Rigidbody>();            
-        }
-        
-    }
-
     void Update()
     {
+        if (target == null || GameManager.instance.player == null)
+        {
+            target = gameOverDummy;
+        }
+        else
+        {
+            target = GameManager.instance.player.GetComponent<Rigidbody>();
+        }
         // 아이템 오른쪽 회전
         transform.Rotate(Vector3.right * rotSpeed * Time.deltaTime); 
 
