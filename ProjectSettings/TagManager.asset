@@ -22,11 +22,12 @@ TagManager:
   - DamageUp
   - Missile
   - MGBullet
+  - DML
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Block
   - Water
   - UI
   - Enemy
@@ -34,7 +35,7 @@ TagManager:
   - Plane
   - Collision
   - Bullet
-  - 
+  - Player
   - 
   - 
   - 
