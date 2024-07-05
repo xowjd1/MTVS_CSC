@@ -23,7 +23,8 @@ public class Bullet : MonoBehaviour
         // 총알 데미지는 GameManager의 인스턴스의 damage다 실시간 업데이트
         bDamage = GameManager.instance.damage;
         // bsgDamage = GameManager.instance.sgDamage;
-        if (GameManager.instance.isShotGun || GameManager.instance.isShotGun5)
+        if (GameManager.instance.isShotGun || GameManager.instance.isShotGun5
+             || GameManager.instance.isShotGunEnd)
         {
             //firePosition.isShotGun = true;
             

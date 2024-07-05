@@ -226,7 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   itemHP: 0
-  maxItemHP: 1000
+  maxItemHP: 100
   boxDamage: 1
 --- !u!1 &7493405716516427589
 GameObject:

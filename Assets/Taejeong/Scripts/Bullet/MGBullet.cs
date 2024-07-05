@@ -13,7 +13,7 @@ public class MGBullet : MonoBehaviour
     bool isLine = false; // 파괴라인과 충돌했는지 여부
 
 
-    public float speed = 10; // 총알 속도
+    public float speed = 25; // 총알 속도
     public Vector3 dir = Vector3.forward; // 방향은 앞으로
 
 

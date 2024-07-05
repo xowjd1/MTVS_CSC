@@ -20,8 +20,8 @@ TagManager:
   - FireSpeedUp
   - LifeUp
   - DamageUp
-  - ItemBoxChangeLayerLine
   - Missile
+  - MGBullet
   layers:
   - Default
   - TransparentFX

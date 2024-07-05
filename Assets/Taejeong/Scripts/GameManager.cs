@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public int kill;
     public bool isShotGun = false;
     public bool isShotGun5 = false;
+    public bool isShotGunEnd = false;
 
     [Header("★ 게임 시스템 매니저")]
     public float time;
