@@ -31,6 +31,7 @@ public class MissileFirePosition : MonoBehaviour
     {
         currentTime += Time.deltaTime;
 
+        // 발사시간이 되고 , 에너미가 검출되면 발사
         if (currentTime >= fireTime)
         {
             // 가장 가까운 적 찾기
@@ -40,12 +41,12 @@ public class MissileFirePosition : MonoBehaviour
             {
                 target = closestEnemy;
                 CreateMissile();
+                currentTime = 0;
             }
 
-            currentTime = 0;
         }
     }
-
+    // 미사일 발사
     void CreateMissile()
     {
         int _shotCount = shotCount;
@@ -53,27 +54,24 @@ public class MissileFirePosition : MonoBehaviour
         {
             for (int i = 0; i < shotCountEveryInterval; i++)
             {
-                if (target.transform.position.z > 2f)
+                // 타겟이 플레이어 뒤쪽으로 이동하면 안쏘게
+                if (target.transform.position.z > 3f)
                 {
                     GameObject missile = Instantiate(missileFactory);
                     missile.GetComponent<Missile>().Init(this.gameObject.transform, target.transform, speed, distanceFromStart, distanceFromEnd);
                 }
-                else
-                {
-                    Debug.Log("Target's z position is too low to fire!");
-                }
-
                 _shotCount--;
             }
             
         new WaitForSeconds(interval);
         }
     }
+    // 가장 가까운 에너미 찾기
     GameObject FindClosestEnemy()
-    {
-        LayerMask enemyLayerMask = LayerMask.GetMask("Enemy"); // "Enemy" 레이어에 해당하는 레이어 마스크 가져오기
 
-        Collider[] colliders = Physics.OverlapSphere(transform.position, radius, enemyLayerMask); // 현재 위치 주변의 "Enemy" 레이어에 해당하는 콜라이더들 가져오기
+    {   // "Enemy" 레이어 가져오기
+        LayerMask enemyLayerMask = LayerMask.GetMask("Enemy");
+        Collider[] colliders = Physics.OverlapSphere(transform.position, radius, enemyLayerMask);
 
         GameObject closestEnemy = null;
         float closestDistance = Mathf.Infinity;

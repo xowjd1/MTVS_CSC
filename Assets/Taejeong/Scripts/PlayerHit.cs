@@ -17,7 +17,9 @@ public class PlayerHit : MonoBehaviour
     public int playerLife;
     public int playerMaxLife = 1;
     public float bsTime = 0.5f; 
+    public float mgbsTime = 0.25f; 
     public float fSpeedUp = 0.1f;
+    public float mgfSpeedUp = 0.05f;
    
 
     bool isPlayerHit = false;
@@ -55,12 +57,14 @@ public class PlayerHit : MonoBehaviour
         if (isFSpeedUp) // 공격속도 증가 아이템 획득시 공속 0.2 증가
         {
             bsTime -= fSpeedUp;
+            mgbsTime -= mgfSpeedUp;
             isFSpeedUp = false;
         }
         if(isDamageUp)
         {
             GameManager.instance.damage += damageUp.damageUpCount;
             GameManager.instance.sgDamage += damageUp.damageUpCount;
+            GameManager.instance.mgDamage += damageUp.mgDamageUpCount;
             isDamageUp = false;
         }
     }

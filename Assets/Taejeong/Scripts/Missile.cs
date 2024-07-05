@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.Analytics;
 using static UnityEngine.GraphicsBuffer;
@@ -18,32 +19,32 @@ public class Missile : MonoBehaviour
     bool isBox = false; // 아이템 박스와 충돌했는지 여부
     bool isLine = false; // 파괴라인과 충돌했는지 여부
 
-    Transform target;
+    public Transform target;
 
     public void Init(Transform _startTr, Transform _endTr, float _speed, float _newPointDistanceFromStartTr, float _newPointDistanceFromEndTr)
     {
         target = _endTr;
         speed = _speed;
 
-        // 끝에 도착할 시간을 랜덤으로 줌.
+        // 끝에 도착할 시간을 랜덤으로 준다
         maxTime = Random.Range(0.8f, 1.0f);
 
         // 시작 지점.
         points[0] = _startTr.position;
 
-        // 시작 지점을 기준으로 랜덤 포인트 지정.
+        // 시작 지점을 기준으로 랜덤 포인트 지정
         points[1] = _startTr.position +
             (_newPointDistanceFromStartTr * Random.Range(-1.0f, 1.0f) * _startTr.right) + // X (좌, 우 전체)
             (_newPointDistanceFromStartTr * Random.Range(-0.15f, 1.0f) * _startTr.up) + // Y (아래쪽 조금, 위쪽 전체)
             (_newPointDistanceFromStartTr * Random.Range(-1.0f, -0.8f) * _startTr.forward); // Z (뒤 쪽만)
 
-        // 도착 지점을 기준으로 랜덤 포인트 지정.
+        // 도착 지점을 기준으로 랜덤 포인트 지정
         points[2] = _endTr.position +
             (_newPointDistanceFromEndTr * Random.Range(-1.0f, 1.0f) * _endTr.right) + // X (좌, 우 전체)
             (_newPointDistanceFromEndTr * Random.Range(-1.0f, 1.0f) * _endTr.up) + // Y (위, 아래 전체)
             (_newPointDistanceFromEndTr * Random.Range(0.8f, 1.0f) * _endTr.forward); // Z (앞 쪽만)
 
-        // 도착 지점.
+        // 도착 지점
         points[3] = _endTr.position;
 
         transform.position = _startTr.position;
@@ -51,23 +52,26 @@ public class Missile : MonoBehaviour
 
     void Update()
     {
-        points[3] = target.position;
+        if (target != null)
+        {
+            points[3] = target.position;
+        }
         if (currentTime > maxTime)
         {
             return;
         }
 
-        // 경과 시간 계산.
+        // 경과 시간 계산
         currentTime += Time.deltaTime * speed;
 
-        // 베지어 곡선으로 X,Y,Z 좌표 얻기.
+        // 베지어 곡선으로 X,Y,Z 좌표 얻기
         transform.position = new Vector3(
             CubicBezierCurve(points[0].x, points[1].x, points[2].x, points[3].x),
             CubicBezierCurve(points[0].y, points[1].y, points[2].y, points[3].y),
             CubicBezierCurve(points[0].z, points[1].z, points[2].z, points[3].z)
         );
 
-        //충돌했다면 총알을 파괴한다.
+        //충돌했다면 총알을 파괴한다. 파괴될때 이펙트 실행하기
         if (isEnemy)
             Destroy(gameObject);
         if (isBox)
@@ -75,9 +79,11 @@ public class Missile : MonoBehaviour
         if (isLine)
             Destroy(gameObject);
 
-        if (points[3] == null)
+        if (target == null)
+        {
             Destroy(gameObject);
-
+            return; 
+        }
     }
 
     private float CubicBezierCurve(float a, float b, float c, float d)

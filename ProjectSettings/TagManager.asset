@@ -21,6 +21,7 @@ TagManager:
   - LifeUp
   - DamageUp
   - ItemBoxChangeLayerLine
+  - Missile
   layers:
   - Default
   - TransparentFX
