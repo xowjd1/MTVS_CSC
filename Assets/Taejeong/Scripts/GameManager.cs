@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     public int sgDamage = 12;
     public int mgDamage = 3;
     [Header("★ 플레이어 스탯")]
-    //public int playerLife = 1;
     public int kill;
     public bool isShotGun = false;
     public bool isShotGun5 = false;
@@ -22,7 +21,6 @@ public class GameManager : MonoBehaviour
    
 
 
-    //bool isPlayerHit = false; 
     
 
     private void Awake()

@@ -17,9 +17,9 @@ public class PlayerHit : MonoBehaviour
     public int playerLife;
     public int playerMaxLife = 1;
     public float bsTime = 0.5f; 
-    public float mgbsTime = 0.25f; 
+    public float mgbsTime = 0.1f; 
     public float fSpeedUp = 0.1f;
-    public float mgfSpeedUp = 0.05f;
+    public float mgfSpeedUp = 0.02f;
    
 
     bool isPlayerHit = false;
