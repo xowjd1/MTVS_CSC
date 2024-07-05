@@ -20,8 +20,12 @@ public class AbilityItemBase : MonoBehaviour
 
     void OnEnable()
     {
-        // 타겟은 GameManager의 인스턴스 player고 rigidbody로 바꿔준다.
-        target = GameManager.instance.player.GetComponent<Rigidbody>();
+        Player player = GetComponent<Player>();
+        if (player != null)
+        {
+            target = GameManager.instance.player.GetComponent<Rigidbody>();            
+        }
+        
     }
 
     void Update()

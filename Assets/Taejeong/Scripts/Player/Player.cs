@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed; // 플레이어 이동속도
+    public float speed = 5f; // 플레이어 이동속도
+    private Rigidbody rb;
 
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
-    private void Update()
+    private void FixedUpdate()
     {
         float h = Input.GetAxis("Horizontal");
-       
 
-        Vector3 dir = new Vector3(h, 0, 0);
 
-        transform.position += dir * speed * Time.deltaTime;
+        Vector3 go = new Vector3(h, 0, 0) * speed;
+        rb.velocity = go;
     }
 }
