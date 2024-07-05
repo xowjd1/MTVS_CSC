@@ -35,7 +35,7 @@ public class MGFirePosition : MonoBehaviour
 
     private void Fire()
     {
-        Vector3 randomOffset = new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f), Random.Range(-5f, 5f));
+        Vector3 randomOffset = new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f));
         Vector3 spawnPosition = transform.position + randomOffset;
 
         GameObject bullet = Instantiate(bulletFactory, spawnPosition, Quaternion.identity);
