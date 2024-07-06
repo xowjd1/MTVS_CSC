@@ -16,11 +16,18 @@ TagManager:
   - WeaponItem
   - AbilityItem
   - Boss
+  - DroneBullet
+  - FireSpeedUp
+  - LifeUp
+  - DamageUp
+  - Missile
+  - MGBullet
+  - DML
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Block
   - Water
   - UI
   - Enemy
@@ -28,7 +35,7 @@ TagManager:
   - Plane
   - Collision
   - Bullet
-  - 
+  - Player
   - 
   - 
   - 

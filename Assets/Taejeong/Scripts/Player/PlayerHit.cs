@@ -6,6 +6,7 @@ public class PlayerHit : MonoBehaviour
 {
 
     public Player player;
+    public Enemy enemy;
     public GameManager gameManager;
     ItemBox itemBox;
     Bullet bullet;
@@ -17,10 +18,13 @@ public class PlayerHit : MonoBehaviour
     public int playerLife;
     public int playerMaxLife = 1;
     public float bsTime = 0.5f; 
+    public float mgbsTime = 0.1f; 
     public float fSpeedUp = 0.1f;
+    public float mgfSpeedUp = 0.02f;
    
 
     bool isPlayerHit = false;
+    bool isPlayerEnemyHit = false;
     bool isLifeUp = false;
     bool isFSpeedUp = false;
     bool isDamageUp = false;
@@ -41,6 +45,12 @@ public class PlayerHit : MonoBehaviour
             isPlayerHit = false; // 데미지를 한번만 받아야하니까 false처리
             
         }
+        if (isPlayerEnemyHit) // 아이템 박스와 부딪혀서 체력이 1 깎임
+        {
+            playerLife -= enemy.damage;
+            isPlayerEnemyHit = false; // 데미지를 한번만 받아야하니까 false처리
+
+        }
         if (isLifeUp) // life 추가 아이템 획득시 체력이 1 오름
         {
             playerLife += lifeUp.lifeUpCount;
@@ -55,12 +65,14 @@ public class PlayerHit : MonoBehaviour
         if (isFSpeedUp) // 공격속도 증가 아이템 획득시 공속 0.2 증가
         {
             bsTime -= fSpeedUp;
+            mgbsTime -= mgfSpeedUp;
             isFSpeedUp = false;
         }
         if(isDamageUp)
         {
             GameManager.instance.damage += damageUp.damageUpCount;
             GameManager.instance.sgDamage += damageUp.damageUpCount;
+            GameManager.instance.mgDamage += damageUp.mgDamageUpCount;
             isDamageUp = false;
         }
     }
@@ -71,6 +83,15 @@ public class PlayerHit : MonoBehaviour
         {
             itemBox = other.GetComponent<ItemBox>(); //이게 중요함
             if(itemBox != null)
+            {
+                isPlayerHit = true;
+                Debug.Log("hit ItemBox");
+            }
+        }
+        if ((other.CompareTag("Enemy")))
+        {
+            itemBox = other.GetComponent<ItemBox>(); //이게 중요함
+            if (itemBox != null)
             {
                 isPlayerHit = true;
                 Debug.Log("hit ItemBox");

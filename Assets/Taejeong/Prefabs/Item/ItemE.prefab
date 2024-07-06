@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2196160532438008136}
   - component: {fileID: 8798622529122384819}
   - component: {fileID: 5125254695027503205}
+  - component: {fileID: 4560513607666658214}
   m_Layer: 0
   m_Name: ItemE
   m_TagString: WeaponItem
@@ -126,3 +127,18 @@ MonoBehaviour:
   speed: 20
   rotSpeed: 100
   target: {fileID: 6252143223826423190, guid: 32d676b8150085c4c828c9c586ea73ff, type: 3}
+  gameOverDummy: {fileID: 4686506476132452, guid: 8499fae1fa738044da167505851cfe82,
+    type: 3}
+--- !u!114 &4560513607666658214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172383329504683165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c3c9a3ebdbbff4b9e5126fe68bc6de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 public class ItemBox : MonoBehaviour
@@ -31,12 +32,16 @@ public class ItemBox : MonoBehaviour
     Vector3 dir = Vector3.back; // 이동방향
     bool isHit = false; // 총알에 맞았는지 여부
     bool isDroneHit = false; // 드론총알에 맞았는지 여부
+    bool isMissileHit = false; // 미사일에 맞았는지 여부
+    bool isMGBulletHit = false; // 머신건에 맞았는지 여부
 
 
     // public GameObject Bullet;
 
     Bullet bullet;
+    MGBullet mgBullet;
     DroneBullet dBullet;
+    Missile missile;
     Rigidbody rigid;
 
     void OnEnable()
@@ -67,10 +72,30 @@ public class ItemBox : MonoBehaviour
                 ItemHPMinus(); // 이벤트(함수)를 불러온다.
             }
          }
+        if (isMGBulletHit)
+        {
+            itemHP -= mgBullet.mgDamage;
+            isMGBulletHit = false; // 데미지를 한번만 받아야하니까 false처리
+            //itemHP 가 0 이하가 되면
+            if (itemHP <= 0)
+            {
+                ItemHPMinus(); // 이벤트(함수)를 불러온다.
+            }
+        }
         if (isDroneHit)
         {
             itemHP -= dBullet.damage;
             isDroneHit = false; // 데미지를 한번만 받아야하니까 false처리
+            //itemHP 가 0 이하가 되면
+            if (itemHP <= 0)
+            {
+                ItemHPMinus(); // 이벤트(함수)를 불러온다.
+            }
+        }
+        if (isMissileHit)
+        {
+            itemHP -= missile.damage;
+            isMissileHit = false; // 데미지를 한번만 받아야하니까 false처리
             //itemHP 가 0 이하가 되면
             if (itemHP <= 0)
             {
@@ -93,6 +118,16 @@ public class ItemBox : MonoBehaviour
                 Debug.Log("Bullet Hit");
             }
         }
+        if (other.CompareTag("MGBullet"))
+        {
+            // 충돌한 총알의 Bullet 컴포넌트를 가져옴
+            mgBullet = other.GetComponent<MGBullet>();
+            if (mgBullet != null)
+            {
+                isMGBulletHit = true;
+                Debug.Log("Bullet Hit");
+            }
+        }
         if (other.CompareTag("DroneBullet"))
         {
             // 충돌한 총알의 Bullet 컴포넌트를 가져옴
@@ -103,6 +138,17 @@ public class ItemBox : MonoBehaviour
                 Debug.Log("DBullet Hit");
             }
         }
+        if (other.CompareTag("Missile"))
+        {
+            // 충돌한 총알의 Bullet 컴포넌트를 가져옴
+            missile = other.GetComponent<Missile>();
+            if (missile != null)
+            {
+                isMissileHit = true;
+                Debug.Log("Missile Hit");
+            }
+        }
+
     }
 
 

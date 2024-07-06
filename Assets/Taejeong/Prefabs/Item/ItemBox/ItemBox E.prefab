@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3970393962284785244}
   - component: {fileID: 334898141267112564}
   - component: {fileID: 3471102068381096279}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ItemBox E
   m_TagString: ItemBox
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -125,6 +125,7 @@ MonoBehaviour:
   speed: 10
   itemHP: 0
   maxItemHP: 150
+  boxDamage: 1
 --- !u!1 &6543783697352621210
 GameObject:
   m_ObjectHideFlags: 0

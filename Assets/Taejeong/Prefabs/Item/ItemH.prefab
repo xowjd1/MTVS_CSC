@@ -128,6 +128,8 @@ MonoBehaviour:
   speed: 20
   rotSpeed: 100
   target: {fileID: 6252143223826423190, guid: 32d676b8150085c4c828c9c586ea73ff, type: 3}
+  gameOverDummy: {fileID: 4686506476132452, guid: 8499fae1fa738044da167505851cfe82,
+    type: 3}
 --- !u!114 &-4671518743209383360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,4 +142,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7a3dd0fbd968e4c9be5a021230011e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireSpeedUpCount: 0.05
