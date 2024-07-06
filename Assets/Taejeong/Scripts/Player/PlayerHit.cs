@@ -6,6 +6,7 @@ public class PlayerHit : MonoBehaviour
 {
 
     public Player player;
+    public Enemy enemy;
     public GameManager gameManager;
     ItemBox itemBox;
     Bullet bullet;
@@ -23,6 +24,7 @@ public class PlayerHit : MonoBehaviour
    
 
     bool isPlayerHit = false;
+    bool isPlayerEnemyHit = false;
     bool isLifeUp = false;
     bool isFSpeedUp = false;
     bool isDamageUp = false;
@@ -42,6 +44,12 @@ public class PlayerHit : MonoBehaviour
             playerLife -= itemBox.boxDamage;
             isPlayerHit = false; // 데미지를 한번만 받아야하니까 false처리
             
+        }
+        if (isPlayerEnemyHit) // 아이템 박스와 부딪혀서 체력이 1 깎임
+        {
+            playerLife -= enemy.damage;
+            isPlayerEnemyHit = false; // 데미지를 한번만 받아야하니까 false처리
+
         }
         if (isLifeUp) // life 추가 아이템 획득시 체력이 1 오름
         {
@@ -75,6 +83,15 @@ public class PlayerHit : MonoBehaviour
         {
             itemBox = other.GetComponent<ItemBox>(); //이게 중요함
             if(itemBox != null)
+            {
+                isPlayerHit = true;
+                Debug.Log("hit ItemBox");
+            }
+        }
+        if ((other.CompareTag("Enemy")))
+        {
+            itemBox = other.GetComponent<ItemBox>(); //이게 중요함
+            if (itemBox != null)
             {
                 isPlayerHit = true;
                 Debug.Log("hit ItemBox");
