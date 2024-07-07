@@ -12,7 +12,7 @@ public class DoubleDrone : MonoBehaviour
 
             // target의 자식오브젝트로 걸려있는 DoubleGun SetActive(true)
 
-            Transform ddrone = GameObject.Find("Player").transform.GetChild(4);
+            Transform ddrone = GameObject.Find("Player").transform.GetChild(5);
 
             if (ddrone != null)
             {

@@ -19,10 +19,11 @@ public class PlayerHit : MonoBehaviour
     public int playerLife;
     public int playerMaxLife = 1;
     public float bsTime = 0.5f; 
-    public float mgbsTime = 0.1f; 
+    public float mgbsTime = 0.15f;
+    public float sgTime = 0.7f;
     public float fSpeedUp = 0.1f;
-    public float mgfSpeedUp = 0.02f;
-   
+    public float mgfSpeedUp = 0.03f;
+    public float sgSpeedUp = 0.07f;
 
     bool isPlayerHit = false;
     bool isPlayerEnemyHit = false;
@@ -70,10 +71,11 @@ public class PlayerHit : MonoBehaviour
             // 플레이어 죽음
             Destroy(gameObject);
         }
-        if (isFSpeedUp) // 공격속도 증가 아이템 획득시 공속 0.2 증가
+        if (isFSpeedUp) // 공격속도 증가 아이템
         {
             bsTime -= fSpeedUp;
             mgbsTime -= mgfSpeedUp;
+            sgTime -= sgSpeedUp;
             isFSpeedUp = false;
         }
         if(isDamageUp)

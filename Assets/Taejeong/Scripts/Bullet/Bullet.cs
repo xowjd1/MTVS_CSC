@@ -35,7 +35,7 @@ public class Bullet : MonoBehaviour
             // 90도 돌려서 회전
             transform.rotation = Quaternion.Euler(90f, 0f, 0f);
             bDamage = GameManager.instance.sgDamage;
-            if(transform.position.z >= 22)
+            if(transform.position.z >= 15)
             {
                 Destroy(gameObject);
             }    

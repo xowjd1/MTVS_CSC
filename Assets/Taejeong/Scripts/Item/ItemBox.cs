@@ -25,7 +25,7 @@ public class ItemBox : MonoBehaviour
 
      */
 
-    public float speed = 10f; // 속도
+   // public float speed = 10f; // 속도
     public int itemHP; // 체력
     public int maxItemHP; // 아이템 최대체력
     public int boxDamage =1; // 박스와 충돌할때 플레이어가 받을 데미지
@@ -35,6 +35,7 @@ public class ItemBox : MonoBehaviour
     bool isMissileHit = false; // 미사일에 맞았는지 여부
     bool isMGBulletHit = false; // 머신건에 맞았는지 여부
 
+    
 
     // public GameObject Bullet;
 
@@ -52,19 +53,11 @@ public class ItemBox : MonoBehaviour
 
     void Update()
     {
-       transform.position += dir * speed * Time.deltaTime;
-
-        //카메라 뒤까지 이동하면 파괴.
-        if (transform.position.z <= -5.0f)
-        {
-            Destroy(gameObject);
-            Debug.Log("아이템 박스 카메라 뒤로 이동 파괴.");
-        }
-
-       
+     
         if (isHit)
          {
           itemHP -= bullet.bDamage;
+
             isHit = false; // 데미지를 한번만 받아야하니까 false처리
             //itemHP 가 0 이하가 되면
             if (itemHP <= 0)
@@ -114,6 +107,7 @@ public class ItemBox : MonoBehaviour
             bullet = other.GetComponent<Bullet>(); 
             if (bullet != null)
             {
+                StartCoroutine(ScaleBox());
                 isHit = true;
                 Debug.Log("Bullet Hit");
             }
@@ -124,6 +118,7 @@ public class ItemBox : MonoBehaviour
             mgBullet = other.GetComponent<MGBullet>();
             if (mgBullet != null)
             {
+                StartCoroutine(ScaleBox());
                 isMGBulletHit = true;
                 Debug.Log("Bullet Hit");
             }
@@ -134,6 +129,7 @@ public class ItemBox : MonoBehaviour
             dBullet = other.GetComponent<DroneBullet>();
             if (dBullet != null)
             {
+                StartCoroutine(ScaleBox());
                 isDroneHit = true;
                 Debug.Log("DBullet Hit");
             }
@@ -144,6 +140,7 @@ public class ItemBox : MonoBehaviour
             missile = other.GetComponent<Missile>();
             if (missile != null)
             {
+                StartCoroutine(ScaleBox());
                 isMissileHit = true;
                 Debug.Log("Missile Hit");
             }
@@ -156,8 +153,22 @@ public class ItemBox : MonoBehaviour
     {
         //이펙트 실행, 파괴한다.
         //자식 오브젝트 분리.
-        transform.DetachChildren();
         Destroy(gameObject);
 
     }
+    IEnumerator ScaleBox()
+    {
+        // 부모 객체의 현재 스케일 값 저장
+        Vector3 originalParentScale = transform.localScale;
+
+        // 부모 객체의 스케일을 변경
+        transform.localScale = originalParentScale * 0.9f;
+
+        yield return new WaitForSeconds(0.02f);
+
+        // 부모 객체의 스케일을 원래대로 복원
+        transform.localScale = originalParentScale;
+    }
+
+
 }

@@ -31,23 +31,35 @@ public class FirePosition : MonoBehaviour
 
         currentTime += Time.deltaTime;
 
-        if( currentTime >= bulletSpawnTime )
+        if (isShotGun)
         {
-            if (isShotGun)
+            bulletSpawnTime = player.sgTime;
+            if (currentTime >= bulletSpawnTime)
             {
                 SGFire();
+                currentTime = 0;
             }
-            if(isShotGunFive)
+        }
+        else if (isShotGunFive)
+        {
+            bulletSpawnTime = player.sgTime;
+            if (currentTime >= bulletSpawnTime)
             {
                 SGFireFIve();
+                currentTime = 0;
             }
-            else
+        }
+        else
+        {
+            isShotGun = false;
+            isShotGunFive = false;
+            bulletSpawnTime = player.bsTime;
+            if (currentTime >= bulletSpawnTime)
             {
-                isShotGun = false;
-                isShotGunFive = false;
                 Fire();
+                currentTime = 0;
             }
-            currentTime = 0;
+            
         }
     }
 
@@ -77,11 +89,13 @@ public class FirePosition : MonoBehaviour
             Vector3 direction = Quaternion.Euler(0, angle, 0) * baseDirection;
 
             // 총알 생성
-            GameObject bullet = Instantiate(bulletFactory, spawnPosition, Quaternion.identity);
+            GameObject bullet = Instantiate(bulletFactory, spawnPosition, Quaternion.Euler(0,angle,0));
 
             // 총알의 방향 설정
             bullet.GetComponent<Bullet>().dir = direction;
+
         }
+
     }
     void SGFireFIve()
     {
@@ -103,10 +117,11 @@ public class FirePosition : MonoBehaviour
             Vector3 direction = Quaternion.Euler(0, angle, 0) * baseDirection;
 
             // 총알 생성
-            GameObject bullet = Instantiate(bulletFactory, spawnPosition, Quaternion.identity);
+            GameObject bullet = Instantiate(bulletFactory, spawnPosition, Quaternion.LookRotation(direction));
 
             // 총알의 방향 설정
             bullet.GetComponent<Bullet>().dir = direction;
+
         }
 
     }
