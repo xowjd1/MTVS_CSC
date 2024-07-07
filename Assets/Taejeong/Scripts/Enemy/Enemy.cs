@@ -21,6 +21,8 @@ public class Enemy : MonoBehaviour
     bool isMissileHit = false; // 미사일에 맞았는지 여부
     bool isMGBulletHit = false; // 머신건에 맞았는지 여부
     bool isLess;
+    float currentTime;
+
 
 
     void Start()

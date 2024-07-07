@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+    Bullet bullet;
     MGBullet mgBullet;
     DroneBullet dBullet;
     Missile missile;
@@ -13,7 +14,9 @@ public class Boss : MonoBehaviour
 
     public float speed = 5;
     public int bossHP;
-    public int damage = 5; 
+    public int damage = 5;
+
+    bool isHit = false; // 총알에 맞았는지 여부
 
     bool isDroneHit = false; // 드론총알에 맞았는지 여부
     bool isMissileHit = false; // 미사일에 맞았는지 여부
@@ -40,6 +43,17 @@ public class Boss : MonoBehaviour
         dir.Normalize();
         transform.position += dir * speed * Time.deltaTime;
 
+        if (isHit)
+        {
+            bossHP -= bullet.bDamage;
+
+            isHit = false; // 데미지를 한번만 받아야하니까 false처리
+            //itemHP 가 0 이하가 되면
+            if (bossHP <= 0)
+            {
+                BossHPMinus(); // 이벤트(함수)를 불러온다.
+            }
+        }
         if (isMGBulletHit)
         {
             bossHP -= mgBullet.mgDamage;
@@ -76,7 +90,17 @@ public class Boss : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        //기본 총알은 스크립트 머신에 되어있고
+        if (other.CompareTag("Bullet"))
+        {
+            // 충돌한 총알의 Bullet 컴포넌트를 가져옴
+            bullet = other.GetComponent<Bullet>();
+            if (bullet != null)
+            {
+                isHit = true;
+            }
+        }
+
+
         if (other.CompareTag("DroneBullet"))
         {
 

@@ -89,7 +89,7 @@ public class FirePosition : MonoBehaviour
             Vector3 direction = Quaternion.Euler(0, angle, 0) * baseDirection;
 
             // 총알 생성
-            GameObject bullet = Instantiate(bulletFactory, spawnPosition, Quaternion.Euler(0,angle,0));
+            GameObject bullet = Instantiate(bulletFactory, spawnPosition, Quaternion.identity);
 
             // 총알의 방향 설정
             bullet.GetComponent<Bullet>().dir = direction;
@@ -117,7 +117,7 @@ public class FirePosition : MonoBehaviour
             Vector3 direction = Quaternion.Euler(0, angle, 0) * baseDirection;
 
             // 총알 생성
-            GameObject bullet = Instantiate(bulletFactory, spawnPosition, Quaternion.LookRotation(direction));
+            GameObject bullet = Instantiate(bulletFactory, spawnPosition, Quaternion.identity);
 
             // 총알의 방향 설정
             bullet.GetComponent<Bullet>().dir = direction;

@@ -7,7 +7,7 @@ public class PlayerHit : MonoBehaviour
 
     public Player player;
     public Enemy enemy;
-    public GameManager gameManager;
+    GameManager gameManager;
     Boss boss;
     ItemBox itemBox;
     Bullet bullet;
@@ -16,11 +16,14 @@ public class PlayerHit : MonoBehaviour
     FirePosition firePosition;
     FireSpeedUp fireSpeedUp;
 
+    [Header("★ 플레이어 체력")]
     public int playerLife;
-    public int playerMaxLife = 1;
+    int playerMaxLife = 1;
+    [Header("★ 연사 속도")]
     public float bsTime = 0.5f; 
     public float mgbsTime = 0.15f;
     public float sgTime = 0.7f;
+    [Header("★ 연사 속도 아이템 수치")]
     public float fSpeedUp = 0.1f;
     public float mgfSpeedUp = 0.03f;
     public float sgSpeedUp = 0.07f;

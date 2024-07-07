@@ -132,9 +132,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  pHasGrenades: 0
-  grenadeobj: {fileID: 7452388368769298504, guid: 00b52ac6c70263348ba5400589f09bcb,
-    type: 3}
 --- !u!114 &1884996310949856575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,13 +145,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7595860354044775955}
-  gameManager: {fileID: 0}
+  enemy: {fileID: 0}
   playerLife: 0
-  playerMaxLife: 1
   bsTime: 0.5
   mgbsTime: 0.1
+  sgTime: 1
   fSpeedUp: 0.1
   mgfSpeedUp: 0.02
+  sgSpeedUp: 0.07
 --- !u!54 &1255349092120042375
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -455,7 +453,7 @@ PrefabInstance:
     - target: {fileID: 5305366567823626604, guid: 6df26c667d9d84843bd452658a6f4899,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5430651702458055772, guid: 6df26c667d9d84843bd452658a6f4899,
         type: 3}
@@ -855,7 +853,7 @@ PrefabInstance:
     - target: {fileID: 5305366567823626604, guid: 6df26c667d9d84843bd452658a6f4899,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5430651702458055772, guid: 6df26c667d9d84843bd452658a6f4899,
         type: 3}
@@ -944,17 +942,17 @@ PrefabInstance:
     - target: {fileID: 1393270876757791715, guid: 49729d23aabde1e428176881185851a2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.345
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1393270876757791715, guid: 49729d23aabde1e428176881185851a2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4736606
+      value: 2.41
       objectReference: {fileID: 0}
     - target: {fileID: 1393270876757791715, guid: 49729d23aabde1e428176881185851a2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.307
+      value: -2.16
       objectReference: {fileID: 0}
     - target: {fileID: 1393270876757791715, guid: 49729d23aabde1e428176881185851a2,
         type: 3}

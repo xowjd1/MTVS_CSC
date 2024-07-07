@@ -44,8 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80a147fce5215784dbb7640f19097989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 7595860354044775955, guid: 62eb351e8a1692d4a87cc70a32342e0d, type: 3}
-  time: 0
-  playerLevel: 0
+  player: {fileID: 0}
+  damage: 10
+  sgDamage: 12
+  mgDamage: 3
   kill: 0
-  itemPool: {fileID: 0}
+  isShotGun: 0
+  isShotGun5: 0
+  isShotGunEnd: 0
+  time: 0
