@@ -9,6 +9,7 @@ public class DroneBullet : MonoBehaviour
     bool isEnemy = false; // 에너미와 충돌했는지 여부
     bool isBox = false; // 아이템 박스와 충돌했는지 여부
     bool isLine = false; // 파괴라인과 충돌했는지 여부
+    bool isBoss = false;
 
     void Update()
     {
@@ -21,6 +22,8 @@ public class DroneBullet : MonoBehaviour
             Destroy(gameObject);
         if (isLine)
             Destroy(gameObject);
+        if (isBoss)
+            Destroy(gameObject);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -29,6 +32,10 @@ public class DroneBullet : MonoBehaviour
         {
             isEnemy = true; // 에너미와 충돌했으니 true 전환
                             // Debug.Log("불렛 - 에너미 충돌"); // 확인용 콘솔메세지 출력
+        }
+        if (other.tag =="Boss")
+        {
+            isBoss = true;
         }
         // 닿은 태그가 ItemBox 라면 ( 아이템 박스와의 상호작용)
         if (other.tag == "ItemBox")

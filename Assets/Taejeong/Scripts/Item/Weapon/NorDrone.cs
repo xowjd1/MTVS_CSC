@@ -19,10 +19,7 @@ public class NorDrone : MonoBehaviour
             {
                 ndrone.gameObject.SetActive(true);
             }
-            else
-            {
-                Debug.Log("DoubleGun을 찾을 수 없습니다.");
-            }
+           
 
             // 어빌리티 아이템 사라지게
             gameObject.SetActive(false);

@@ -8,6 +8,7 @@ public class PlayerHit : MonoBehaviour
     public Player player;
     public Enemy enemy;
     public GameManager gameManager;
+    Boss boss;
     ItemBox itemBox;
     Bullet bullet;
     DamageUp damageUp;
@@ -28,6 +29,7 @@ public class PlayerHit : MonoBehaviour
     bool isLifeUp = false;
     bool isFSpeedUp = false;
     bool isDamageUp = false;
+    bool isPlayerBossHit = false;
 
    
     void OnEnable()
@@ -49,6 +51,12 @@ public class PlayerHit : MonoBehaviour
         {
             playerLife -= enemy.damage;
             isPlayerEnemyHit = false; // 데미지를 한번만 받아야하니까 false처리
+
+        }
+        if (isPlayerBossHit) // 아이템 박스와 부딪혀서 체력이 1 깎임
+        {
+            playerLife -= boss.damage;
+            isPlayerBossHit = false; // 데미지를 한번만 받아야하니까 false처리
 
         }
         if (isLifeUp) // life 추가 아이템 획득시 체력이 1 오름
@@ -79,62 +87,70 @@ public class PlayerHit : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if((other.CompareTag("ItemBox")))
-        {
-            itemBox = other.GetComponent<ItemBox>(); //이게 중요함
-            if(itemBox != null)
-            {
-                isPlayerHit = true;
-                Debug.Log("hit ItemBox");
-            }
-        }
-        if ((other.CompareTag("Enemy")))
+        if ((other.CompareTag("ItemBox")))
         {
             itemBox = other.GetComponent<ItemBox>(); //이게 중요함
             if (itemBox != null)
             {
                 isPlayerHit = true;
-                Debug.Log("hit ItemBox");
+
             }
         }
-        if (other.CompareTag("LifeUp"))
-        {
-            lifeUp = other.GetComponent<LifeUp>();
-            if (lifeUp != null && !isLifeUp) // isLifeUp가 false일 때만 실행
+            if ((other.CompareTag("Enemy")))
             {
-                isLifeUp = true;
-                Debug.Log("hit LifeUp!");
+                enemy = other.GetComponent<Enemy>(); //이게 중요함
+                if (enemy != null)
+                {
+                    isPlayerEnemyHit = true;
 
-                // AbilityItem 처리 후 Collider 비활성화
-                other.gameObject.SetActive(false);
+                }
             }
-        }
-        if (other.CompareTag("FireSpeedUp"))
-        {
-            fireSpeedUp = other.GetComponent<FireSpeedUp>();
-            if (fireSpeedUp != null && !isFSpeedUp) // isLifeUp가 false일 때만 실행
+            if ((other.CompareTag("Boss")))
             {
-                isFSpeedUp = true;
-                Debug.Log("hit FireSpeedUp!");
+                boss = other.GetComponent<Boss>(); //이게 중요함
+                if (boss != null)
+                {
+                    isPlayerBossHit = true;
 
-                // AbilityItem 처리 후 Collider 비활성화
-                other.gameObject.SetActive(false);
+                }
             }
-        }
-        if (other.CompareTag("DamageUp"))
-        {
-            damageUp = other.GetComponent<DamageUp>();
-            if (damageUp != null && !isDamageUp) // isLifeUp가 false일 때만 실행
+            if (other.CompareTag("LifeUp"))
             {
-                isDamageUp = true;
-                Debug.Log("hit DamageUp!");
+                lifeUp = other.GetComponent<LifeUp>();
+                if (lifeUp != null && !isLifeUp) // isLifeUp가 false일 때만 실행
+                {
+                    isLifeUp = true;
 
-                // AbilityItem 처리 후 Collider 비활성화
-                other.gameObject.SetActive(false);
+
+                    // AbilityItem 처리 후 Collider 비활성화
+                    other.gameObject.SetActive(false);
+                }
             }
-        }
+            if (other.CompareTag("FireSpeedUp"))
+            {
+                fireSpeedUp = other.GetComponent<FireSpeedUp>();
+                if (fireSpeedUp != null && !isFSpeedUp) // isLifeUp가 false일 때만 실행
+                {
+                    isFSpeedUp = true;
 
 
+                    // AbilityItem 처리 후 Collider 비활성화
+                    other.gameObject.SetActive(false);
+                }
+            }
+            if (other.CompareTag("DamageUp"))
+            {
+                damageUp = other.GetComponent<DamageUp>();
+                if (damageUp != null && !isDamageUp) // isLifeUp가 false일 때만 실행
+                {
+                    isDamageUp = true;
 
+                    // AbilityItem 처리 후 Collider 비활성화
+                    other.gameObject.SetActive(false);
+                }
+            }
+
+
+        
     }
 }
