@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
 
     [Header("★ 게임 시스템 매니저")]
     public float time;
+    public int randomMin;
+    public int randomMax;
    
 
 

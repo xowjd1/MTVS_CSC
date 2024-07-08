@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6768484847782004127}
-  - component: {fileID: 1138212710364413095}
   - component: {fileID: 6247126116580209326}
+  - component: {fileID: 8643194458222716693}
   m_Layer: 6
   m_Name: Box
   m_TagString: ItemBox
@@ -35,21 +35,6 @@ Transform:
   - {fileID: 5294596411750100675}
   m_Father: {fileID: 4752959620642810001}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1138212710364413095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 632070129962239430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 304d19d8184b0864d888827cc90208b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemHP: 0
-  maxItemHP: 2500
-  boxDamage: 1
 --- !u!65 &6247126116580209326
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -71,6 +56,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8643194458222716693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632070129962239430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 110fd435ef31cab4f822eb641ca17eb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obHP: 0
+  maxOBHP: 0
+  boxDamage: 1
 --- !u!1 &1023475739536770783
 GameObject:
   m_ObjectHideFlags: 0
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 6176330199095282505}
   - component: {fileID: 172052804649158832}
   - component: {fileID: 6859939717328040895}
-  - component: {fileID: 6277359232825611821}
+  - component: {fileID: 5822401138368161888}
   m_Layer: 5
   m_Name: UI_ItemBoxHP
   m_TagString: Untagged
@@ -151,7 +151,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 100
---- !u!114 &6277359232825611821
+--- !u!114 &5822401138368161888
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1023475739536770783}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab07ac6b1e5040d4da948c13b142c425, type: 3}
+  m_Script: {fileID: 11500000, guid: 28fe2da0c06c35d4b8469f8df56829de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4289095944452593859
@@ -274,8 +274,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4752959620642810001}
-  - component: {fileID: 805287643660290667}
-  m_Layer: 0
+  - component: {fileID: 2160869891685246171}
+  m_Layer: 6
   m_Name: Obstacle Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +299,7 @@ Transform:
   - {fileID: 7095584223922852253}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &805287643660290667
+--- !u!114 &2160869891685246171
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -308,10 +308,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5183107364559494298}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa3899b14f06bc847827936b0ab59d78, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d69b80eb614a6d4bbebbe927da768e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemBox: {fileID: 1138212710364413095}
+  ob: {fileID: 8643194458222716693}
   speed: 10
 --- !u!1 &7230310409005751740
 GameObject:

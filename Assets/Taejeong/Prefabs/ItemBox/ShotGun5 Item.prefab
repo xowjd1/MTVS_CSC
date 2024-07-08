@@ -393,7 +393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5230700783897071537}
   - component: {fileID: 6818230492385053571}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ShotGun5 Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}

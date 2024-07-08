@@ -204,7 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9128658873447121147}
   - component: {fileID: 2926605931837214593}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ShotGun3 Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}

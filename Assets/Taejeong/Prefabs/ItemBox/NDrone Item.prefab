@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2361810556748514244}
   - component: {fileID: 8796153619346187581}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NDrone Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}

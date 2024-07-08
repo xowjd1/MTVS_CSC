@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 3362848359749665942}
   - component: {fileID: 8905450235687281935}
   - component: {fileID: 1204000651382478914}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Box
   m_TagString: ItemBox
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2769357221892364792}
   - component: {fileID: 4184060399090376337}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DoubleGun Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}

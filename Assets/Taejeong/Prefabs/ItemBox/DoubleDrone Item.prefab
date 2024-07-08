@@ -112,7 +112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1068300440245478919}
   - component: {fileID: 8217628317475477429}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DoubleDrone Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
