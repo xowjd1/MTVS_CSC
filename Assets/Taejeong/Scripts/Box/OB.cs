@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
-using static UnityEditor.Progress;
+
 
 public class OB : MonoBehaviour
 {
+
+    GameManager gameManager;
     Bullet bullet;
     MGBullet mgBullet;
     DroneBullet dBullet;
