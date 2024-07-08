@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
    
     void Update()
     {
+        time += Time.deltaTime;
+
         if(isShotGun5)
         {
             isShotGun = false;

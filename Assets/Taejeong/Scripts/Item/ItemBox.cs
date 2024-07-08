@@ -46,8 +46,8 @@ public class ItemBox : MonoBehaviour
     Rigidbody rigid;
 
     void OnEnable()
-    { 
-       itemHP = maxItemHP; // 스폰될 때 체력은 최대체력으로 설정
+    {
+        maxItemHP = (int)(GameManager.instance.time * Random.Range(50,75));
 
     }
 
