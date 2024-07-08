@@ -7,8 +7,6 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public Player player;
 
-    public GameObject enemySpawner;
-
     [Header("★ 총알 기본 데미지")]
     public int damage = 10;
     public int sgDamage = 12;
@@ -21,8 +19,7 @@ public class GameManager : MonoBehaviour
     public bool isShotGunEnd = false;
 
     [Header("★ 게임 시스템 매니저")]
-    float currentTime;
-    public float enemyStopSpawnTime;
+    public float time;
    
 
 
@@ -43,15 +40,12 @@ public class GameManager : MonoBehaviour
    
     void Update()
     {
-        currentTime += Time.deltaTime;
-        if (currentTime >= enemyStopSpawnTime)
-            enemySpawner.SetActive(false);
+        time += Time.deltaTime;
 
         if(isShotGun5)
         {
             isShotGun = false;
         }
-
     }
 
     void GameStart()
