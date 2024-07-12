@@ -157,39 +157,7 @@ public class TutoSystem : MonoBehaviour
         }
     }
 
-    // 이동 설명 끝났을 때 
-    void MoveExplainFin()
-    {
-        // 1. 움직임 설명
-        isMove = true;
-
-    }
-
-    // 2, 에너미 스폰 , 에너미 설명
-    void EnemyExplain()
-    {
-        //에너미를 스폰한다.
-        enemySpawn = true;
-    }
-
-    // 3. 공격 설명, 무기 스폰
-    void WeaponExplain()
-    {
-        isAttack = true;
-    }
-
-    
-    // 4. 아이템 스폰 , 아이템 설명
-    void ItemExplain()
-    {
-        itemSpawn = true;
-    }
-    // 5. 스텟 아이템 스폰, 설명
-    void StatItemExplain()
-    {
-        statItemSpawn = true;
-    }
-
+   
     
 
 }

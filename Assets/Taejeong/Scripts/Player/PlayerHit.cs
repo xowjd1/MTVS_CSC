@@ -28,11 +28,16 @@ public class PlayerHit : MonoBehaviour
     public float mgfSpeedUp = 0.03f;
     public float sgSpeedUp = 0.07f;
 
+    [Header("★ HUD 적용용")]
+    public int damageupCount;
+    public int speedupCount;
+    public bool isPlayerDefeat = false;
+
     bool isPlayerHit = false;
     bool isPlayerEnemyHit = false;
-    bool isLifeUp = false;
-    bool isFSpeedUp = false;
-    bool isDamageUp = false;
+    public bool isLifeUp = false;
+    public bool isFSpeedUp = false;
+    public bool isDamageUp = false;
     bool isPlayerBossHit = false;
 
    
@@ -41,10 +46,15 @@ public class PlayerHit : MonoBehaviour
         playerLife = playerMaxLife; // 스폰될 때 체력은 최대체력으로 설정
   
     }
-
+    private void Start()
+    {
+        player = GameManager.instance.player;
+    }
 
     void Update()
     {
+       
+
         if (isPlayerHit) // 아이템 박스와 부딪혀서 체력이 1 깎임
         {
             playerLife -= itemBox.boxDamage;
@@ -72,6 +82,7 @@ public class PlayerHit : MonoBehaviour
         if (playerLife <= 0) // 체력이 0 이하가 되면 죽음
         {
             // 플레이어 죽음
+            isPlayerDefeat = true;
             Destroy(gameObject);
         }
         if (isFSpeedUp) // 공격속도 증가 아이템
@@ -79,10 +90,12 @@ public class PlayerHit : MonoBehaviour
             bsTime -= fSpeedUp;
             mgbsTime -= mgfSpeedUp;
             sgTime -= sgSpeedUp;
+            speedupCount++;
             isFSpeedUp = false;
         }
         if(isDamageUp)
         {
+            damageupCount++;
             GameManager.instance.damage += damageUp.damageUpCount;
             GameManager.instance.sgDamage += damageUp.damageUpCount;
             GameManager.instance.mgDamage += damageUp.mgDamageUpCount;

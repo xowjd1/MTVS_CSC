@@ -13,7 +13,7 @@ public class NorDrone : MonoBehaviour
 
             // target의 자식오브젝트로 걸려있는 DoubleGun SetActive(true)
 
-            Transform ndrone = GameObject.Find("Player").transform.GetChild(4);
+            Transform ndrone = GameObject.Find("Player").transform.GetChild(1);
 
             if (ndrone != null)
             {

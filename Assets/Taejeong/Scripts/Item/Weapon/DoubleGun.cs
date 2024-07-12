@@ -23,7 +23,7 @@ public class DoubleGun : MonoBehaviour
 
             // target의 자식오브젝트로 걸려있는 DoubleGun SetActive(true)
             Transform ngun = GameObject.Find("Player").transform.GetChild(0);
-            Transform dgun = GameObject.Find("Player").transform.GetChild(1);
+            Transform dgun = GameObject.Find("Player").transform.GetChild(4);
             if (dgun != null && ngun != null)
             {
                 

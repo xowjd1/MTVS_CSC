@@ -17,6 +17,8 @@ public class Boss : MonoBehaviour
     public int damage = 5;
 
     bool isHit = false; // 총알에 맞았는지 여부
+    public bool isBossLose = false;
+
 
     bool isDroneHit = false; // 드론총알에 맞았는지 여부
     bool isMissileHit = false; // 미사일에 맞았는지 여부
@@ -42,6 +44,14 @@ public class Boss : MonoBehaviour
         Vector3 dir = target.transform.position - transform.position;
         dir.Normalize();
         transform.position += dir * speed * Time.deltaTime;
+
+        // 보스의 z위치가 60 40 20 일때 speed 를 0으로 만들고
+        // 미사일 두발을 발사한다.
+        // 미사일을 발사했다면 다시 speed를 5 로 바꾼다.
+        // 보스의 z위치가 플레이어 앞일때
+        // 자폭함수를 실행한다.
+
+
 
         if (isHit)
         {
@@ -99,8 +109,6 @@ public class Boss : MonoBehaviour
                 isHit = true;
             }
         }
-
-
         if (other.CompareTag("DroneBullet"))
         {
 
@@ -132,9 +140,21 @@ public class Boss : MonoBehaviour
             }
         }
     }
+
     void BossHPMinus()
     {
+        isBossLose = true;
         Destroy(gameObject);
+    }
+
+    //보스 자폭 공격
+    void BossLastAttack()
+    {
+
+        // 자폭
+        Destroy(gameObject);
+        // 공격
+
     }
 
 }
