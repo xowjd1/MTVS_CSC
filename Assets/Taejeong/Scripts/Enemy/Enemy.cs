@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -22,6 +23,8 @@ public class Enemy : MonoBehaviour
     bool isMGBulletHit = false; // 머신건에 맞았는지 여부
     bool isLess;
     float currentTime;
+    public bool isTuto = false;
+
 
 
 
@@ -52,7 +55,10 @@ public class Enemy : MonoBehaviour
             if (target == null || GameManager.instance.player == null)
             {
                 target = gameOverDummy;
+             
             }
+           
+
             else
             {
                 target = GameManager.instance.player.GetComponent<Rigidbody>();

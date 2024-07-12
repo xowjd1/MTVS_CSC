@@ -12,9 +12,11 @@ public class ItemBox : MonoBehaviour
      총알과 충돌할 때
      itemHp = itemHp - bullet.damage;
      만약 itemHp <= 0 이라면
-     transform.DetachChildren() 부모-자식 관계를 끊고 자식 오브젝트들을 독립
-     itemBox는 파괴하고 남은 자식오브젝트는 플레이어를 타겟팅하여 이동
+     itemBox는 파괴
      플레이어와 접촉하면 이펙트를 생성하고 능력치를 부여한다.
+
+     총알에 피격시 스케일값이 변했다가 돌아온다.
+
 
      카메라 뒤까지 이동하면 파괴.
 
@@ -34,6 +36,8 @@ public class ItemBox : MonoBehaviour
     bool isDroneHit = false; // 드론총알에 맞았는지 여부
     bool isMissileHit = false; // 미사일에 맞았는지 여부
     bool isMGBulletHit = false; // 머신건에 맞았는지 여부
+   public bool isTutorial = false; // 튜토리얼 전용 인지
+  
 
     
 
@@ -43,12 +47,19 @@ public class ItemBox : MonoBehaviour
     MGBullet mgBullet;
     DroneBullet dBullet;
     Missile missile;
-    Rigidbody rigid;
 
     void OnEnable()
     {
-        maxItemHP = (int)(GameManager.instance.time * Random.Range(GameManager.instance.randomMin, GameManager.instance.randomMax) + Random.Range(50, 100));
-        itemHP = maxItemHP;
+
+        if (isTutorial) // 튜토리얼 전용이라면 체력을 50으로 만든다.
+            itemHP = 50;
+
+        else // 튜토리얼이 아니라면 게임진행시간 * 랜덤값으로 체력값을 정해준다.
+        {
+            maxItemHP = (int)(GameManager.instance.time * Random.Range(GameManager.instance.randomMin, GameManager.instance.randomMax) + Random.Range(50, 100));
+            itemHP = maxItemHP;
+        }
+      
 
     }
 
@@ -153,7 +164,6 @@ public class ItemBox : MonoBehaviour
     void ItemHPMinus()
     {
         //이펙트 실행, 파괴한다.
-        //자식 오브젝트 분리.
         Destroy(gameObject);
 
     }

@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemManagerPositions:
-  - {x: -5, y: 1, z: 50}
+  - {x: -4, y: 1, z: 50}
   - {x: 0, y: 1, z: 50}
-  - {x: 5, y: 1, z: 50}
+  - {x: 4, y: 1, z: 50}
   itemManagers:
   - {fileID: 2500826753219850375, guid: 0e95987ce7668bf46a91b5fe9c7cd458, type: 3}
   - {fileID: 2500826753219850375, guid: fc4adf1946396e64eb648b83c6af4cea, type: 3}

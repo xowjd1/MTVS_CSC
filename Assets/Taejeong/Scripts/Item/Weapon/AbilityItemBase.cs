@@ -17,14 +17,17 @@ public class AbilityItemBase : MonoBehaviour
     public Rigidbody target; // 타겟
     public Rigidbody gameOverDummy; // 게임오버용 더미
     Vector3 dir;
-
+    public bool isTuto = false;
 
     void Update()
     {
-        if (target == null || GameManager.instance.player == null)
+     
+        if(target == null || GameManager.instance.player == null)
         {
             target = gameOverDummy;
+            
         }
+        
         else
         {
             target = GameManager.instance.player.GetComponent<Rigidbody>();

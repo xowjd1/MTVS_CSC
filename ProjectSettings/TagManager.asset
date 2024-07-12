@@ -23,6 +23,7 @@ TagManager:
   - Missile
   - MGBullet
   - DML
+  - TutoBox
   layers:
   - Default
   - TransparentFX

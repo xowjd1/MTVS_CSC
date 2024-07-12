@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-   // GameManager gameManager;
+    public GameManager gameManager;
+    public TutoSystem tutoSystem;
     public float speed = 5f; // 플레이어 이동속도
     private Rigidbody rb;
 
 
     private void Start()
     {
+        GameManager.instance.player = this;
         rb = GetComponent<Rigidbody>();
     }
 
-   
+    private void Update()
+    {
+       
+    }
 
     private void FixedUpdate()
     {

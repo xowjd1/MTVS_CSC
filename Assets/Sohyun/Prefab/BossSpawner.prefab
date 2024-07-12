@@ -49,7 +49,7 @@ MonoBehaviour:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"BossFactory","value":{"$content":0,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
-    - {fileID: 3390628760742031080, guid: 1a148002661661441addacbf5fe09947, type: 3}
+    - {fileID: 7463957704671579128, guid: 210d39878b10b1241a765c9f9ffaea4b, type: 3}
 --- !u!114 &8821496046683603414
 MonoBehaviour:
   m_ObjectHideFlags: 0
