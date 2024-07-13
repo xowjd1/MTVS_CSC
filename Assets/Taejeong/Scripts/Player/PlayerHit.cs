@@ -19,6 +19,7 @@ public class PlayerHit : MonoBehaviour
     [Header("★ 플레이어 체력")]
     public int playerLife;
     int playerMaxLife = 1;
+
     [Header("★ 연사 속도")]
     public float bsTime = 0.5f; 
     public float mgbsTime = 0.15f;

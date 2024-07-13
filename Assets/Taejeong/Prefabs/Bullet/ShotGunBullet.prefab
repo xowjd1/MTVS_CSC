@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
+  player: {fileID: 1884996310949856575, guid: 62eb351e8a1692d4a87cc70a32342e0d, type: 3}
   bDamage: 0
   firePosition: {fileID: 0}
   speed: 0

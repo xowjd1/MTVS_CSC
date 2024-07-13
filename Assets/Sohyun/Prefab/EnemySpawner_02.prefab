@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2184228924442157147}
   - component: {fileID: 801224997263129830}
   - component: {fileID: 3612745368458981922}
+  - component: {fileID: -4603164510670370062}
   m_Layer: 0
   m_Name: EnemySpawner_02
   m_TagString: Untagged
@@ -68,3 +69,16 @@ MonoBehaviour:
     _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
     _objectReferences:
     - {fileID: 11400000, guid: 41f0e227b870abe44a564f8f33c8659a, type: 2}
+--- !u!114 &-4603164510670370062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4210167378215626368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2548cf997338c8342a47a2ee2770ec8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossSpawnTime: 60
