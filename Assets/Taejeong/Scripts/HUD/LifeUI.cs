@@ -1,18 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LifeUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Image[] lifeImage;
+    public PlayerHit player;
 
-    // Update is called once per frame
+
+    void Awake()
+    {
+
+    }
     void Update()
     {
-        
+        Debug.Log("Player Life: " + player.playerLife);
+        if (player.playerLife == 1)
+        {
+            Debug.Log("1");
+            lifeImage[0].color = new Color(1, 1, 1, 1);
+            lifeImage[1].color = new Color(1, 1, 1, 0);
+            lifeImage[2].color = new Color(1, 1, 1, 0);
+        }
+        else if (player.playerLife == 2)
+        {
+            lifeImage[0].color = new Color(1, 1, 1, 1);
+            lifeImage[1].color = new Color(1, 1, 1, 1);
+            lifeImage[2].color = new Color(1, 1, 1, 0);
+        }
+        else if(player.playerLife == 3)
+        {
+            lifeImage[0].color = new Color(1, 1, 1, 1);
+            lifeImage[1].color = new Color(1, 1, 1, 1);
+            lifeImage[2].color = new Color(1, 1, 1, 1);
+        }
+        else if(player == null)
+        {
+            lifeImage[0].color = new Color(1, 1, 1, 0);
+            lifeImage[1].color = new Color(1, 1, 1, 0);
+            lifeImage[2].color = new Color(1, 1, 1, 0);
+        }
     }
+
+
 }

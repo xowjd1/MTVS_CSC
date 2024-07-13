@@ -17,7 +17,7 @@ public class FireSpeedUI : MonoBehaviour
 
     void Update()
     {
-        FSCount.text = player.speedupCount.ToString();
+        FSCount.text = "Lv." + player.speedupCount.ToString();
     }
 }
 

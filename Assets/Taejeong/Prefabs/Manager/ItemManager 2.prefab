@@ -60,4 +60,4 @@ MonoBehaviour:
   - {fileID: 6649023004765025960, guid: b137f07a1424ddb4caa95d4cec7d23fc, type: 3}
   - {fileID: 5617710430710396629, guid: 0d46370193b17564989e3c7f62a6c339, type: 3}
   - {fileID: 4508206951342811661, guid: 3789c340229959f4ca46fdd4084de37c, type: 3}
-  spawnTime: 3
+  spawnTime: 4

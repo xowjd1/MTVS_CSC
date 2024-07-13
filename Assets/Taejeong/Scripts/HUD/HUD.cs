@@ -5,9 +5,7 @@ using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
-    Text myText;
     public PlayerHit player;
-    public Boss boss;
     public GameObject gameDefeat;  // 게임 패배
     public GameObject gameWin;  // 게임 승리
 
@@ -24,32 +22,32 @@ public class HUD : MonoBehaviour
 
 
 
-    private void Awake()
-    {
-        myText = GetComponent<Text>();
-    }
-
     private void Start()
     {
+
         gameDefeat.SetActive(false);
         gameWin.SetActive(false);
     }
 
-
+    void Update()
+    {
+        GameDefeat();
+        GameWin();
+    }
 
 
     void GameDefeat()
     {
         if(player.isPlayerDefeat)
         gameDefeat.SetActive(true);
-        Debug.Log("Defeat");
+
 
     }
 
     void GameWin()
     {
-        if(boss.isBossLose)
+        if(GameManager.instance.isGameWin)
         gameWin.SetActive(true);
-        Debug.Log("Win");
+
     }
 }

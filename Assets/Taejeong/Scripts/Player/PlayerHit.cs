@@ -7,14 +7,14 @@ public class PlayerHit : MonoBehaviour
 
     public Player player;
     public Enemy enemy;
-    GameManager gameManager;
     Boss boss;
     ItemBox itemBox;
-    Bullet bullet;
+    OB obBox;
+    BossMissile bossM;
     DamageUp damageUp;
     LifeUp lifeUp;
-    FirePosition firePosition;
     FireSpeedUp fireSpeedUp;
+    BossBomb bossBomb;
 
     [Header("★ 플레이어 체력")]
     public int playerLife;
@@ -58,7 +58,8 @@ public class PlayerHit : MonoBehaviour
 
         if (isPlayerHit) // 아이템 박스와 부딪혀서 체력이 1 깎임
         {
-            playerLife -= itemBox.boxDamage;
+            playerLife --;
+            
             isPlayerHit = false; // 데미지를 한번만 받아야하니까 false처리
             
         }
@@ -70,7 +71,7 @@ public class PlayerHit : MonoBehaviour
         }
         if (isPlayerBossHit) // 아이템 박스와 부딪혀서 체력이 1 깎임
         {
-            playerLife -= boss.damage;
+            playerLife --;
             isPlayerBossHit = false; // 데미지를 한번만 받아야하니까 false처리
 
         }
@@ -109,7 +110,8 @@ public class PlayerHit : MonoBehaviour
         if ((other.CompareTag("ItemBox")))
         {
             itemBox = other.GetComponent<ItemBox>(); //이게 중요함
-            if (itemBox != null)
+            obBox = other.GetComponent<OB>();
+            if (itemBox != null || obBox != null)
             {
                 isPlayerHit = true;
 
@@ -127,7 +129,8 @@ public class PlayerHit : MonoBehaviour
             if ((other.CompareTag("Boss")))
             {
                 boss = other.GetComponent<Boss>(); //이게 중요함
-                if (boss != null)
+                bossM = other.GetComponent<BossMissile>();
+                if (boss != null || bossM != null)
                 {
                     isPlayerBossHit = true;
 
@@ -168,8 +171,16 @@ public class PlayerHit : MonoBehaviour
                     other.gameObject.SetActive(false);
                 }
             }
+            if (other.CompareTag("BossBomb"))
+            {
+                bossBomb = other.GetComponent<BossBomb>();
+                if (bossBomb != null)
+                {
+                    playerLife -= 5;
+                }
+            }
 
 
-        
+
     }
 }

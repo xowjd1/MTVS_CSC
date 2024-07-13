@@ -11,7 +11,7 @@ public class ShotgunFive : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Transform ngun = GameObject.Find("Player").transform.GetChild(0);
-            Transform dgun = GameObject.Find("Player").transform.GetChild(1);
+            Transform dgun = GameObject.Find("Player").transform.GetChild(4);
             Transform shotGun3 = GameObject.Find("Player").transform.GetChild(2);
 
             if (shotGun3 != null)

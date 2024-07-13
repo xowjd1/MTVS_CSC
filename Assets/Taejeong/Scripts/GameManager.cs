@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public Player player;
+    public Boss boss;
 
     
 
@@ -28,10 +29,12 @@ public class GameManager : MonoBehaviour
 
     [Header("★ 게임 시스템 매니저")]
     public bool isTutorial = false;
-    public bool isGameStart = false; 
+    public bool isGameStart = false;
+    public bool isGameWin = false;
     public float time;
     public int randomMin;
     public int randomMax;
+    public int bossHP = 5000;
 
 
 
@@ -47,7 +50,8 @@ public class GameManager : MonoBehaviour
             damage = defaultDamage;
             sgDamage = defaultSGDamage;
             mgDamage = defaultMGDamage;
-        }
+
+}
         else
         {
             Destroy(gameObject);
@@ -62,8 +66,10 @@ public class GameManager : MonoBehaviour
         time += Time.deltaTime;
 
 
-
-
+        if (bossHP <= 0)
+        {
+            isGameWin = true;
+        }
         if(isShotGun5)
         {
             isShotGun = false;
@@ -75,26 +81,39 @@ public class GameManager : MonoBehaviour
     {
         GameManager.instance.isTutorial = false;
         GameManager.instance.isGameStart = true;
-        GameManager.instance.damage = defaultDamage;
-        GameManager.instance.sgDamage = defaultSGDamage;
-        GameManager.instance.mgDamage = defaultMGDamage;
+        Restart();
+
+
         SceneManager.LoadScene("GameScene");
     }
     public void TutorialStart()
     {
         GameManager.instance.isTutorial = true; // GameManager의 필드나 변수를 초기화합니다.
-        GameManager.instance.damage = defaultDamage;
-        GameManager.instance.sgDamage = defaultSGDamage;
-        GameManager.instance.mgDamage = defaultMGDamage;
+        Restart();
+
+
+
         SceneManager.LoadScene("TutoScene");
     }
     public void StartScene()
     {
         GameManager.instance.isTutorial = false;
+
+        Restart();
+        SceneManager.LoadScene("StartScene");
+    }
+
+    void Restart()
+    {
         GameManager.instance.damage = defaultDamage;
         GameManager.instance.sgDamage = defaultSGDamage;
         GameManager.instance.mgDamage = defaultMGDamage;
-        SceneManager.LoadScene("StartScene");
+        GameManager.instance.isShotGun = false;
+        GameManager.instance.isShotGun5 = false;
+        GameManager.instance.isShotGunEnd = false;
+        GameManager.instance.isGameWin = false;
+        GameManager.instance.player.isPlayerDefeat = false;
+        GameManager.instance.time = 0;
     }
 
 
@@ -108,8 +127,9 @@ public class GameManager : MonoBehaviour
     }
 
 
-   
-   
+    
+
+
 
 
 }

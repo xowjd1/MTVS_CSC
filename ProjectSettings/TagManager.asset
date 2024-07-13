@@ -24,6 +24,8 @@ TagManager:
   - MGBullet
   - DML
   - TutoBox
+  - BossStop
+  - BossBomb
   layers:
   - Default
   - TransparentFX

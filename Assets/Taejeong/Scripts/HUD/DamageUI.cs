@@ -16,6 +16,6 @@ public class DamageUI : MonoBehaviour
 
     void Update()
     {
-        damageCount.text = player.damageupCount.ToString();
+        damageCount.text = "Lv." + player.damageupCount.ToString();
     }
 }

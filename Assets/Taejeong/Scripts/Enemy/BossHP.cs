@@ -18,10 +18,10 @@ public class BossHP : MonoBehaviour
     void Update()
     {
         //Text랑 hp 연동
-        bossHP.text = boss.bossHP.ToString();
+        bossHP.text = GameManager.instance.bossHP.ToString();
 
         //HP가 0이하가 된다면 UI도 없애기
-        if (boss.bossHP <= 0)
+        if (GameManager.instance.bossHP <= 0)
         {
             transform.parent.gameObject.SetActive(false);
         }
