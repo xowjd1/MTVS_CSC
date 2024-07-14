@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7595860354044775955}
   - component: {fileID: 1884996310949856575}
   - component: {fileID: 1255349092120042375}
+  - component: {fileID: 7847557790233810994}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -136,6 +137,9 @@ MonoBehaviour:
     type: 3}
   tutoSystem: {fileID: 0}
   speed: 10
+  damageupCount: 0
+  speedupCount: 0
+  isPlayerDefeat: 0
 --- !u!114 &1884996310949856575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +161,12 @@ MonoBehaviour:
   fSpeedUp: 0.1
   mgfSpeedUp: 0.02
   sgSpeedUp: 0.07
+  damageupCount: 0
+  speedupCount: 0
+  isPlayerDefeat: 0
+  isLifeUp: 0
+  isFSpeedUp: 0
+  isDamageUp: 0
 --- !u!54 &1255349092120042375
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -184,6 +194,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 124
   m_CollisionDetection: 0
+--- !u!95 &7847557790233810994
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6748013797663962851}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: de76d67d0ab88dc439b10b32370775ea, type: 3}
+  m_Controller: {fileID: 9100000, guid: 1fde608a2e8cfb243ad0d81066b2514e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &3182018592743139379
 PrefabInstance:
   m_ObjectHideFlags: 0

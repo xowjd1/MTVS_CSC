@@ -52,7 +52,7 @@ MonoBehaviour:
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"TargetTime","value":{"$content":2.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
-    - {fileID: 8766702298563791821, guid: b47a78a59de446946867b7abb0f587e2, type: 3}
+    - {fileID: 8766702298563791821, guid: b392b544c99eeab479e29fa02c653e91, type: 3}
 --- !u!114 &3612745368458981922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,4 +81,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2548cf997338c8342a47a2ee2770ec8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossSpawnTime: 65
+  bossSpawnTime: 66
