@@ -299,8 +299,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 6, y: 6, z: 6}
-  m_Center: {x: 0, y: 1.67, z: -0.5}
+  m_Size: {x: 5.32, y: 3.77, z: 6}
+  m_Center: {x: 0, y: 1.73, z: -0.5}
 --- !u!1 &8931602856653692282
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,9 +311,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4724392282253223093}
   - component: {fileID: 1419978588609529537}
+  - component: {fileID: 665200995072392303}
   m_Layer: 6
   m_Name: suicideBombAtk
-  m_TagString: Untagged
+  m_TagString: BossBomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -354,6 +355,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 8
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &665200995072392303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8931602856653692282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f600b5d71f4fd743bd3bb755498ec5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1430409084662773949
 PrefabInstance:
   m_ObjectHideFlags: 0

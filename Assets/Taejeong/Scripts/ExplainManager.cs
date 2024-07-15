@@ -21,7 +21,7 @@ public class ExplainManager : MonoBehaviour
         expLines = new string[]
         {
            "안녕하십니까. 메아에 오신 걸 환영합니다.", //currentLineIndex = 0
-           "왼쪽으로 이동은 [←]로 가능하고 \n 오른쪽으로 이동은 [→]로 가능합니다.",
+           "왼쪽으로 이동은 [A},[←]로 가능하고 \n 오른쪽으로 이동은 [D],[→]로 가능합니다.",
            "무기를 지급해 드리겠습니다.\n 공격은 자동 공격입니다.",
            "적이 나타났습니다.\n 일반 적은 한방이면 처치할 수 있습니다.",
            "근접할 경우, 공격 당하며 체력이 1만큼 소모됩니다. \n 체력이 0 이하가 되면 게임이 종료됩니다.",
@@ -59,11 +59,13 @@ public class ExplainManager : MonoBehaviour
             while (!spacePressed)
             {
                 if ((currentLineIndex == 4 && tutoSystem.isEnemyDead && Input.GetButtonDown("Jump")) ||
-                    (currentLineIndex == 6 && tutoSystem.isGetItem && Input.GetButtonDown("Jump")))
+                    (currentLineIndex == 6 && tutoSystem.isGetItem && Input.GetButtonDown("Jump")) ||
+                    (currentLineIndex == 8 && tutoSystem.isGetStat && Input.GetButtonDown("Jump") ))
+                    
                 {
                     spacePressed = true;
                 }
-                else if ((currentLineIndex != 4 && currentLineIndex != 6) && Input.GetButtonDown("Jump"))
+                else if ((currentLineIndex != 4 && currentLineIndex != 6 && currentLineIndex != 8) && Input.GetButtonDown("Jump"))
                 {
                     spacePressed = true;
                 }

@@ -26,7 +26,7 @@ public class OB : MonoBehaviour
 
     void OnEnable()
     {
-        maxOBHP = (int)(GameManager.instance.time * Random.Range(100, 250));
+        maxOBHP = (int)(GameManager.instance.time * Random.Range(200, 250));
         obHP = maxOBHP;
 
     }

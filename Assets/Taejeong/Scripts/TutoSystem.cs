@@ -1,8 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.UI;
+
+#if UNITY_EDITOR
+using UnityEditorInternal.Profiling.Memory.Experimental;
+using static UnityEditor.Progress;
+#endif
 
 public class TutoSystem : MonoBehaviour
 {
@@ -20,8 +24,7 @@ public class TutoSystem : MonoBehaviour
 
     public bool isEnemyDead = false;
     public bool isGetItem = false;
-
-
+    public bool isGetStat = false;
 
     public GameObject tutoEnemy;
     public GameObject tutoItem;
@@ -67,7 +70,21 @@ public class TutoSystem : MonoBehaviour
             }
 
         }
+        if(hasSpawned)
+        {
+            GameObject statItemD = GameObject.FindGameObjectWithTag("DamageUp");
+            GameObject statItemF = GameObject.FindGameObjectWithTag("FireSpeedUp");
+            GameObject statItemL = GameObject.FindGameObjectWithTag("LifeUp");
 
+
+            if (statItemD == null || statItemF == null || statItemL == null)
+            {
+                isGetStat = true;
+            }
+        }
+        
+
+        
 
     }
 
