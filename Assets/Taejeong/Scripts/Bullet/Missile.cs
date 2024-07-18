@@ -58,10 +58,6 @@ public class Missile : MonoBehaviour
         {
             points[3] = target.position;
 
-            if (transform.position == points[3])
-            {
-                Destroy(gameObject);
-            }
         }
         if (currentTime > maxTime)
         {
@@ -90,10 +86,9 @@ public class Missile : MonoBehaviour
 
         if (target == null)
         {
-            points[3] = target.position;
             
-            //Destroy(gameObject);
-            //return; 
+            Destroy(gameObject);
+            return; 
         }
     }
 
