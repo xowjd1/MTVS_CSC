@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DroneBullet : MonoBehaviour
 {
+    public GameObject impactPrefab;
     public int damage;
     public float speed;
     bool isEnemy = false; // 에너미와 충돌했는지 여부
@@ -30,16 +31,19 @@ public class DroneBullet : MonoBehaviour
         // 닿은 태그가 Enemy 라면 ( 에너미와의 상호작용)
         if (other.tag == "Enemy")
         {
+            Instantiate(impactPrefab, transform.position, Quaternion.identity);
             isEnemy = true; // 에너미와 충돌했으니 true 전환
                             // Debug.Log("불렛 - 에너미 충돌"); // 확인용 콘솔메세지 출력
         }
         if (other.tag =="Boss")
         {
+            Instantiate(impactPrefab, transform.position, Quaternion.identity);
             isBoss = true;
         }
         // 닿은 태그가 ItemBox 라면 ( 아이템 박스와의 상호작용)
         if (other.tag == "ItemBox")
         {
+            Instantiate(impactPrefab, transform.position, Quaternion.identity);
             isBox = true; // 아이템박스와 충돌했으니 true 전환
                           //  Debug.Log("불렛 - 아이템박스 충돌"); // 확인용 콘솔메세지 출력
 
