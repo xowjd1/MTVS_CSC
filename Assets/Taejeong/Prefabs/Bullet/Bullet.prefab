@@ -196,7 +196,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: -1970710315514739076, guid: f455b7da6a2af404a9e19d6e3e57ddfb,
     type: 3}
-  player: {fileID: 1884996310949856575, guid: 62eb351e8a1692d4a87cc70a32342e0d, type: 3}
   bDamage: 0
   firePosition: {fileID: 0}
   speed: 0
