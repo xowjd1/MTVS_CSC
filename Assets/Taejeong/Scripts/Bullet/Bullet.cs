@@ -31,9 +31,7 @@ public class Bullet : MonoBehaviour
             
             speed = 3.5f;
             transform.position += dir * speed * Time.deltaTime;
-                
-            // 90도 돌려서 회전
-            transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+
             bDamage = GameManager.instance.sgDamage;
             if(transform.position.z >= 15)
             {
