@@ -43,7 +43,8 @@ Transform:
   - {fileID: 1982708755278974471}
   - {fileID: 5525868788574858093}
   - {fileID: 7208204906414332312}
-  - {fileID: 5498578651960634885}
+  - {fileID: 4855290179581973344}
+  - {fileID: 5284623110802730187}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7740185433602448580
@@ -656,6 +657,85 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4607018228651586533}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4632636136908870619
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3860803165715334128}
+    m_Modifications:
+    - target: {fileID: 228305567338873019, guid: d1d72d93e4ba77b4ba7c429c2a836c31,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 228305567338873019, guid: d1d72d93e4ba77b4ba7c429c2a836c31,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.96500003
+      objectReference: {fileID: 0}
+    - target: {fileID: 228305567338873019, guid: d1d72d93e4ba77b4ba7c429c2a836c31,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 228305567338873019, guid: d1d72d93e4ba77b4ba7c429c2a836c31,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 228305567338873019, guid: d1d72d93e4ba77b4ba7c429c2a836c31,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 228305567338873019, guid: d1d72d93e4ba77b4ba7c429c2a836c31,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 228305567338873019, guid: d1d72d93e4ba77b4ba7c429c2a836c31,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 228305567338873019, guid: d1d72d93e4ba77b4ba7c429c2a836c31,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 228305567338873019, guid: d1d72d93e4ba77b4ba7c429c2a836c31,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 228305567338873019, guid: d1d72d93e4ba77b4ba7c429c2a836c31,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 529887754752959454, guid: d1d72d93e4ba77b4ba7c429c2a836c31,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a8c718f4d22117c4691021c220d046d8, type: 2}
+    - target: {fileID: 1951668289865109344, guid: d1d72d93e4ba77b4ba7c429c2a836c31,
+        type: 3}
+      propertyPath: m_Name
+      value: Peasant Nolant(Free Version)@Rifle Run 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d1d72d93e4ba77b4ba7c429c2a836c31, type: 3}
+--- !u!4 &4855290179581973344 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 228305567338873019, guid: d1d72d93e4ba77b4ba7c429c2a836c31,
+    type: 3}
+  m_PrefabInstance: {fileID: 4632636136908870619}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4710720896720865946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1028,9 +1108,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1d72d93e4ba77b4ba7c429c2a836c31, type: 3}
---- !u!4 &5498578651960634885 stripped
+--- !u!4 &5284623110802730187 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 446764743825670773, guid: d1d72d93e4ba77b4ba7c429c2a836c31,
+  m_CorrespondingSourceObject: {fileID: 228305567338873019, guid: d1d72d93e4ba77b4ba7c429c2a836c31,
     type: 3}
   m_PrefabInstance: {fileID: 5367686077753404528}
   m_PrefabAsset: {fileID: 0}
