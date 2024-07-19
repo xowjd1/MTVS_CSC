@@ -243,15 +243,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b60d7f274b6c424b82ba203ce5eb71d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 7519946469754865001, guid: 4b6e34601df41f6479b52e2913e6824c,
+    type: 3}
   suicideATK: {fileID: 1419978588609529537}
   gameManager: {fileID: -1970710315514739076, guid: f455b7da6a2af404a9e19d6e3e57ddfb,
     type: 3}
   gameOverDummy: {fileID: 4686506476132452, guid: 8499fae1fa738044da167505851cfe82,
     type: 3}
   target: {fileID: 1255349092120042375, guid: 62eb351e8a1692d4a87cc70a32342e0d, type: 3}
-  bossMissileFactory: {fileID: 2268600460308127394, guid: 05baa0981b3aca34abebde381a6bc6ec,
+  bossMissileFactory: {fileID: 4100896842017045319, guid: 60c65911ae8c3ad448c4754928bd92bc,
     type: 3}
-  speed: 0
+  speed: 5
   damage: 5
 --- !u!54 &-2966583987409012667
 Rigidbody:

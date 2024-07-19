@@ -8,6 +8,7 @@ public class BossMissile : MonoBehaviour
     public float speed = 20;
    
     bool isPlayer = false;
+    public GameObject impactPrefab;
 
     void Update()
     {
@@ -24,7 +25,7 @@ public class BossMissile : MonoBehaviour
         if (other.tag == "Player")
         {
             isPlayer = true; // 에너미와 충돌했으니 true 전환
-                            // Debug.Log("불렛 - 에너미 충돌"); // 확인용 콘솔메세지 출력
+            Instantiate(impactPrefab, transform.position, Quaternion.identity);
         }
         
 

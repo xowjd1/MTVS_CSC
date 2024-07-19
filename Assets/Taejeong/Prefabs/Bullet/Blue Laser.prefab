@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5766964628115118673}
   - component: {fileID: 5814925243509919556}
   - component: {fileID: 3186526767262261042}
-  - component: {fileID: 2387525076036826618}
   m_Layer: 0
   m_Name: Blue Laser
   m_TagString: DroneBullet
@@ -154,18 +153,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2387525076036826618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1914128973376016007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f8d68462a10b3f41b7e24d25d34b263, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3616921566804430851
 PrefabInstance:
   m_ObjectHideFlags: 0
