@@ -200,6 +200,7 @@ MonoBehaviour:
   itemHP: 0
   maxItemHP: 15
   boxDamage: 1
+  isTutorial: 0
 --- !u!65 &6905039267180715578
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -368,6 +369,7 @@ MonoBehaviour:
   target: {fileID: 1255349092120042375, guid: 62eb351e8a1692d4a87cc70a32342e0d, type: 3}
   gameOverDummy: {fileID: 4686506476132452, guid: 8499fae1fa738044da167505851cfe82,
     type: 3}
+  isTuto: 0
 --- !u!136 &7151981847483617077
 CapsuleCollider:
   m_ObjectHideFlags: 0
