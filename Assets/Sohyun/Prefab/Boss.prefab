@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 3382080610956642476}
   - component: {fileID: 4970231005989596968}
   - component: {fileID: -2966583987409012667}
-  - component: {fileID: 6857296128945539039}
+  - component: {fileID: 5744229423070192689}
   m_Layer: 6
   m_Name: Boss
   m_TagString: Boss
@@ -243,13 +243,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b60d7f274b6c424b82ba203ce5eb71d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 7519946469754865001, guid: 4b6e34601df41f6479b52e2913e6824c,
+    type: 3}
   suicideATK: {fileID: 1419978588609529537}
   gameManager: {fileID: -1970710315514739076, guid: f455b7da6a2af404a9e19d6e3e57ddfb,
     type: 3}
   gameOverDummy: {fileID: 4686506476132452, guid: 8499fae1fa738044da167505851cfe82,
     type: 3}
   target: {fileID: 1255349092120042375, guid: 62eb351e8a1692d4a87cc70a32342e0d, type: 3}
-  bossMissileFactory: {fileID: 2268600460308127394, guid: 05baa0981b3aca34abebde381a6bc6ec,
+  bossMissileFactory: {fileID: 4100896842017045319, guid: 60c65911ae8c3ad448c4754928bd92bc,
     type: 3}
   speed: 5
   damage: 5
@@ -280,8 +282,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &6857296128945539039
-BoxCollider:
+--- !u!135 &5744229423070192689
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -295,12 +297,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.84, y: 3.77, z: 4}
-  m_Center: {x: 0, y: 1.73, z: -0.5}
+  m_Radius: 2.47
+  m_Center: {x: 0, y: 1.5, z: -0.59}
 --- !u!1 &8931602856653692282
 GameObject:
   m_ObjectHideFlags: 0

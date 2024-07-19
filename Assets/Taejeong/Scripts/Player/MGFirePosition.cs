@@ -9,6 +9,7 @@ public class MGFirePosition : MonoBehaviour
     // 스폰 포지션에 랜덤값을 부여한다.
 
     public GameManager gameManager;
+    public GameObject muzzleSpawn;
     public PlayerHit player;
     public GameObject bulletFactory;
     public float bulletSpawnTime; // 총알 발사 주기 시간
@@ -39,6 +40,7 @@ public class MGFirePosition : MonoBehaviour
         Vector3 spawnPosition = transform.position + randomOffset;
 
         GameObject bullet = Instantiate(bulletFactory, spawnPosition, Quaternion.identity);
+        GameObject muzzle = Instantiate(muzzleSpawn, transform.position, Quaternion.identity);
     }
 
 

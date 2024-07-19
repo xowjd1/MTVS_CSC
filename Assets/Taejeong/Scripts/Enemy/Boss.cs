@@ -9,6 +9,7 @@ public class Boss : MonoBehaviour
     DroneBullet dBullet;
     Missile missile;
     BossStop bossStop;
+    public GameObject explosion;
     public Collider suicideATK;
     public GameManager gameManager;
     public Rigidbody gameOverDummy; // 게임오버용 더미
@@ -173,6 +174,7 @@ public class Boss : MonoBehaviour
     void BossHPMinus()
     {
         GameManager.instance.isGameWin = true;
+        GameObject exp = Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 

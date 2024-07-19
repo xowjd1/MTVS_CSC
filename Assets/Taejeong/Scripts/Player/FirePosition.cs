@@ -7,6 +7,8 @@ public class FirePosition : MonoBehaviour
     public GameManager gameManager;
     public PlayerHit player;
     public GameObject bulletFactory;
+    public GameObject muzzleSpawn;
+    public GameObject sgMuzzleSpawn;
     public float bulletSpawnTime; // 총알 발사 주기 시간
     float currentTime;
     public bool isShotGun = false; // 샷건인가
@@ -67,6 +69,7 @@ public class FirePosition : MonoBehaviour
     {
         // 총알을 현재 스폰 포인트에서 소환
         GameObject bullet =  Instantiate(bulletFactory, transform.position, Quaternion.identity);  
+        GameObject muzzle =  Instantiate(muzzleSpawn, transform.position, Quaternion.identity);  
     }
 
     void SGFire()
@@ -90,6 +93,7 @@ public class FirePosition : MonoBehaviour
 
             // 총알 생성
             GameObject bullet = Instantiate(bulletFactory, spawnPosition, Quaternion.identity);
+            GameObject sgmuzzle = Instantiate(sgMuzzleSpawn, spawnPosition, Quaternion.identity);
 
             // 총알의 방향 설정
             bullet.GetComponent<Bullet>().dir = direction;
@@ -118,6 +122,7 @@ public class FirePosition : MonoBehaviour
 
             // 총알 생성
             GameObject bullet = Instantiate(bulletFactory, spawnPosition, Quaternion.identity);
+            GameObject sgfmuzzle = Instantiate(sgMuzzleSpawn, spawnPosition, Quaternion.identity);
 
             // 총알의 방향 설정
             bullet.GetComponent<Bullet>().dir = direction;

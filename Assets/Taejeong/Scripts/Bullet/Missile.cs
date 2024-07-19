@@ -12,6 +12,7 @@ public class Missile : MonoBehaviour
     private float maxTime = 0;
     private float currentTime = 0;
     private float speed;
+    public GameObject impactPrefab;
 
     public int damage;
 
@@ -86,8 +87,9 @@ public class Missile : MonoBehaviour
 
         if (target == null)
         {
-            
+            Instantiate(impactPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
+
             return; 
         }
     }
@@ -111,24 +113,25 @@ public class Missile : MonoBehaviour
         if (other.tag == "Enemy")
         {
             isEnemy = true; // 에너미와 충돌했으니 true 전환
-                            // Debug.Log("불렛 - 에너미 충돌"); // 확인용 콘솔메세지 출력
+            Instantiate(impactPrefab, transform.position, Quaternion.identity);
         }
         if (other.tag == "Boss")
         {
             isBoss = true;
+            Instantiate(impactPrefab, transform.position, Quaternion.identity);
         }
         // 닿은 태그가 ItemBox 라면 ( 아이템 박스와의 상호작용)
         if (other.tag == "ItemBox")
         {
             isBox = true; // 아이템박스와 충돌했으니 true 전환
-                          //  Debug.Log("불렛 - 아이템박스 충돌"); // 확인용 콘솔메세지 출력
+            Instantiate(impactPrefab, transform.position, Quaternion.identity);
 
         }
         // 닿은 태그가 BulletDestroyLine 라면 ( 일정거리 이상 넘어갔을 때 불렛 삭제 )
         if (other.tag == "BulletDestroyLine")
         {
             isLine = true; // 파괴라인과 충돌했으니 true 전환
-                           //  Debug.Log("불렛 - 파괴라인 충돌"); // 확인용 콘솔메세지 출력
+            Instantiate(impactPrefab, transform.position, Quaternion.identity);
 
         }
 

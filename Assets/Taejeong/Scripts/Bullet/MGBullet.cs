@@ -7,6 +7,7 @@ public class MGBullet : MonoBehaviour
     public GameManager gameManager;
     public int mgDamage; // 총알 데미지
     public MGFirePosition mgFirePosition;
+    public GameObject impactPrefab;
 
     bool isEnemy = false; // 에너미와 충돌했는지 여부
     bool isBox = false; // 아이템 박스와 충돌했는지 여부
@@ -44,17 +45,18 @@ public class MGBullet : MonoBehaviour
         if (other.tag == "Enemy")
         {
             isEnemy = true; // 에너미와 충돌했으니 true 전환
-                            // Debug.Log("불렛 - 에너미 충돌"); // 확인용 콘솔메세지 출력
+            Instantiate(impactPrefab, transform.position, Quaternion.identity);
         }
         if (other.tag == "Boss")
         {
             isBoss = true;
+            Instantiate(impactPrefab, transform.position, Quaternion.identity);
         }
         // 닿은 태그가 ItemBox 라면 ( 아이템 박스와의 상호작용)
         if (other.tag == "ItemBox")
         {
             isBox = true; // 아이템박스와 충돌했으니 true 전환
-                          //  Debug.Log("불렛 - 아이템박스 충돌"); // 확인용 콘솔메세지 출력
+            Instantiate(impactPrefab, transform.position, Quaternion.identity);
 
         }
         // 닿은 태그가 BulletDestroyLine 라면 ( 일정거리 이상 넘어갔을 때 불렛 삭제 )

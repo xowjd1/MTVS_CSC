@@ -5,7 +5,7 @@ using UnityEngine;
 public class EffectDestroy : MonoBehaviour
 {
     float currentTime;
-    float DTime = 6;
+    float DTime = 0.2f;
 
     private void Update()
     {
