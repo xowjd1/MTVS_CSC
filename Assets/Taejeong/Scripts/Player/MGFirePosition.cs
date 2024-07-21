@@ -20,6 +20,8 @@ public class MGFirePosition : MonoBehaviour
     {
         // bulletSpawnTime 은 플레이어의 bsTime 이다.
         bulletSpawnTime = player.mgbsTime;
+         AudioSource sgfireSound = GetComponent<AudioSource>();
+         sgfireSound.Play();
     }
 
     private void Update()
@@ -41,6 +43,7 @@ public class MGFirePosition : MonoBehaviour
 
         GameObject bullet = Instantiate(bulletFactory, spawnPosition, Quaternion.identity);
         GameObject muzzle = Instantiate(muzzleSpawn, transform.position, Quaternion.identity);
+      
     }
 
 

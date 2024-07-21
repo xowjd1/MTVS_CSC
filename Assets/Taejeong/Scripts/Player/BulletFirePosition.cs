@@ -9,6 +9,7 @@ public class BulletFirePosition : MonoBehaviour
     public float bulletSpawnTime; // 총알 발사 주기 시간
     float currentTime;
 
+
     private void Update()
     {
         currentTime += Time.deltaTime;
@@ -26,5 +27,7 @@ public class BulletFirePosition : MonoBehaviour
         // 총알을 현재 스폰 포인트에서 소환
         GameObject bullet = Instantiate(bulletFactory, transform.position, Quaternion.identity);
         GameObject muzzle = Instantiate(muzzleSpawn, transform.position, Quaternion.identity);
+        AudioSource droneFireSound = GetComponent<AudioSource>();
+        droneFireSound.Play();
     }
 }

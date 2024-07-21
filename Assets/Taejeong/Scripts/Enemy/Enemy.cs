@@ -22,7 +22,6 @@ public class Enemy : MonoBehaviour
     bool isMissileHit = false; // 미사일에 맞았는지 여부
     bool isMGBulletHit = false; // 머신건에 맞았는지 여부
     bool isLess;
-    float currentTime;
     public bool isTuto = false;
 
 
@@ -68,6 +67,7 @@ public class Enemy : MonoBehaviour
                 Vector3 dir = target.transform.position - transform.position;
                 dir.Normalize();
                 transform.position += dir * speed * Time.deltaTime;
+            
         }
 
         if (isMGBulletHit)
@@ -102,6 +102,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+  
     void OnTriggerEnter(Collider other)
     {
         //기본 총알은 스크립트 머신에 되어있고

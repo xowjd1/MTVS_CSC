@@ -20,7 +20,7 @@ public class ExplainManager : MonoBehaviour
         // 설명 데이터 초기화 
         expLines = new string[]
         {
-           "안녕하십니까. 메아에 오신 걸 환영합니다.", //currentLineIndex = 0
+           "안녕하십니까. 마고시에 오신 걸 환영합니다.", //currentLineIndex = 0
            "[A],[←]를 누르면 왼쪽으로 이동하고, \n [D],[→]를 누르면 오른쪽으로 이동합니다.",
            "무기를 지급해 드리겠습니다.\n 플레이어의 공격은 자동으로 실행됩니다.",
            "적이 나타났습니다.\n 일반 적은 한방이면 처치할 수 있습니다.",
@@ -97,7 +97,7 @@ public class ExplainManager : MonoBehaviour
             if (currentLineIndex == 9)
             {
                 tutoSystem.statItemSpawn = true;
-                returnUI.SetActive(true);
+                
             }
 
 
@@ -109,6 +109,7 @@ public class ExplainManager : MonoBehaviour
                 if (currentLineIndex >= expLines.Length)
             {
                 expTextBox.SetActive(false);
+                returnUI.SetActive(true);
             }
         }
     }

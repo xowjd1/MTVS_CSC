@@ -201,6 +201,7 @@ MonoBehaviour:
   firePosition: {fileID: 0}
   impactPrefab: {fileID: 8140350804104808948, guid: b90d13e51a51ee4468fa1bf6bef3bb9e,
     type: 3}
+  impactSound: {fileID: 8300000, guid: 675413b607c7d4e47857dc015a72bf12, type: 3}
   speed: 0
   dir: {x: 0, y: 0, z: 1}
 --- !u!1001 &2430392799796919847

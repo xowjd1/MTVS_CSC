@@ -9,8 +9,6 @@ public class GameManager : MonoBehaviour
     public Player player;
     public Boss boss;
 
-    
-
     [Header("★ 총알 기본 데미지")]
     public int damage;
     public int sgDamage;
@@ -50,8 +48,8 @@ public class GameManager : MonoBehaviour
             damage = defaultDamage;
             sgDamage = defaultSGDamage;
             mgDamage = defaultMGDamage;
-
-}
+            isGameWin = false;
+        }
         else
         {
             Destroy(gameObject);
@@ -98,7 +96,7 @@ public class GameManager : MonoBehaviour
     public void StartScene()
     {
         GameManager.instance.isTutorial = false;
-
+        GameManager.instance.isGameWin = false;
         Restart();
         SceneManager.LoadScene("StartScene");
     }
@@ -114,6 +112,7 @@ public class GameManager : MonoBehaviour
         GameManager.instance.isGameWin = false;
         GameManager.instance.player.isPlayerDefeat = false;
         GameManager.instance.time = 0;
+        GameManager.instance.bossHP = 5000;
     }
 
 

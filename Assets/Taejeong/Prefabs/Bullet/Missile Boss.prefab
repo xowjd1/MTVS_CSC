@@ -125,7 +125,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   speed: 20
-  impactPrefab: {fileID: 0}
+  impactPrefab: {fileID: 3715668039806226732, guid: c072fa05592cb0e469c3827b0d495632,
+    type: 3}
 --- !u!1001 &3635773203875503819
 PrefabInstance:
   m_ObjectHideFlags: 0

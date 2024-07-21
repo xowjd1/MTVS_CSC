@@ -210,7 +210,7 @@ public class Boss : MonoBehaviour
     void BossSuicideAttack()
     {
         //气惯 捞棋飘 持扁
-
+        GameObject exp = Instantiate(explosion, transform.position, Quaternion.identity);
         // 0.1檬 第 磊气
         Destroy(gameObject,0.1f);
         suicideATK.gameObject.SetActive(true);

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6651427416325609712}
   - component: {fileID: 6733002161250061838}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: swordCol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,12 +25,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88505398948409133}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.159, y: 1.262, z: -0.919}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.000000089406974, y: -0.7071068, z: 0.0000001192093, w: 0.7071068}
+  m_LocalPosition: {x: 0.496, y: 0.122, z: -0.042}
+  m_LocalScale: {x: 0.83333313, y: 0.8333333, z: 0.83333313}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1408868546475993909}
+  m_Father: {fileID: 5920913040689742289}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &6733002161250061838
 BoxCollider:
@@ -51,7 +51,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: -0.42, y: 0.43, z: -2.19}
+  m_Size: {x: 0.12, y: 0.15, z: 1.68}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8766702298563791821
 GameObject:
@@ -87,12 +87,11 @@ Transform:
   m_GameObject: {fileID: 8766702298563791821}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.089927, y: -13.143042, z: 16.640615}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalPosition: {x: 0, y: -0.7, z: 0}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 35455025548597531}
-  - {fileID: 6651427416325609712}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5357843504928749666
@@ -170,7 +169,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -225,7 +224,7 @@ MonoBehaviour:
   target: {fileID: 1255349092120042375, guid: 62eb351e8a1692d4a87cc70a32342e0d, type: 3}
   damage: 1
   enemyHP: 1
-  speed: 4
+  speed: 7
   isTuto: 0
 --- !u!114 &8106866269052759246
 MonoBehaviour:
@@ -234,7 +233,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8766702298563791821}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2fe5546f775c47d2820aa5e8a715f53, type: 3}
   m_Name: 
@@ -274,7 +273,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8766702298563791821}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: ba0f67c19695109438fa96f68e15bd4e, type: 2}
   m_CullingMode: 0
@@ -344,14 +343,34 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.98
       objectReference: {fileID: 0}
+    - target: {fileID: 95565753606369354, guid: c266c61b42ce56a4ca7e9190ef1209e3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95565753606369354, guid: c266c61b42ce56a4ca7e9190ef1209e3,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5928592999582485894, guid: c266c61b42ce56a4ca7e9190ef1209e3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6651427416325609712}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
 --- !u!4 &35455025548597531 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4555062712112460, guid: c266c61b42ce56a4ca7e9190ef1209e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 30919255984770135}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5920913040689742289 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5928592999582485894, guid: c266c61b42ce56a4ca7e9190ef1209e3,
     type: 3}
   m_PrefabInstance: {fileID: 30919255984770135}
   m_PrefabAsset: {fileID: 0}

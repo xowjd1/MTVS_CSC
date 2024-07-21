@@ -22,7 +22,7 @@ public class HUD : MonoBehaviour
 
 
 
-    private void Start()
+    private void Awake()
     {
 
         gameDefeat.SetActive(false);
@@ -33,6 +33,7 @@ public class HUD : MonoBehaviour
     {
         GameDefeat();
         GameWin();
+       
     }
 
 
@@ -40,6 +41,7 @@ public class HUD : MonoBehaviour
     {
         if(player.isPlayerDefeat)
         gameDefeat.SetActive(true);
+        
 
 
     }
@@ -50,4 +52,5 @@ public class HUD : MonoBehaviour
         gameWin.SetActive(true);
 
     }
+ 
 }

@@ -15,6 +15,7 @@ public class PlayerHit : MonoBehaviour
     LifeUp lifeUp;
     FireSpeedUp fireSpeedUp;
     BossBomb bossBomb;
+    AbilityItemBase aib;
 
     [Header("★ 플레이어 체력")]
     public int playerLife;
@@ -23,7 +24,7 @@ public class PlayerHit : MonoBehaviour
     [Header("★ 연사 속도")]
     public float bsTime = 0.5f; 
     public float mgbsTime = 0.15f;
-    public float sgTime = 0.7f;
+    public float sgTime = 1.0f;
     [Header("★ 연사 속도 아이템 수치")]
     public float fSpeedUp = 0.1f;
     public float mgfSpeedUp = 0.03f;
@@ -33,6 +34,8 @@ public class PlayerHit : MonoBehaviour
     public int damageupCount;
     public int speedupCount;
     public bool isPlayerDefeat = false;
+
+    public GameObject itemGetEffect;
 
     bool isPlayerHit = false;
     bool isPlayerEnemyHit = false;
@@ -178,6 +181,17 @@ public class PlayerHit : MonoBehaviour
                 {
                     playerLife -= 5;
                 }
+            }
+            if (other.CompareTag("WeaponItem"))
+            {
+            aib = other.GetComponent<AbilityItemBase>();
+                if (aib != null)
+                {
+                Vector3 position = transform.position;
+                position.y = 0.55f; 
+
+                Instantiate(itemGetEffect, position, Quaternion.identity);
+            }
             }
 
 

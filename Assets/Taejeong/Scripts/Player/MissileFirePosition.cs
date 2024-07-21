@@ -45,6 +45,7 @@ public class MissileFirePosition : MonoBehaviour
                 currentTime = 0;
             }
 
+
         }
     }
     // 미사일 발사
@@ -59,6 +60,8 @@ public class MissileFirePosition : MonoBehaviour
                 if (target.transform.position.z > 3f)
                 {
                     GameObject missile = Instantiate(missileFactory);
+                    AudioSource missileFireSound = GetComponent<AudioSource>();
+                    missileFireSound.Play();
                     missile.GetComponent<Missile>().Init(this.gameObject.transform, target.transform, speed, distanceFromStart, distanceFromEnd);
                 }
                 _shotCount--;
