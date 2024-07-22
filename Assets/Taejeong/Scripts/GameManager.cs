@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -67,11 +69,15 @@ public class GameManager : MonoBehaviour
         if (bossHP <= 0)
         {
             isGameWin = true;
+            AudioSource bossBombSound = GetComponent<AudioSource>();
+            bossBombSound.Play();
         }
         if(isShotGun5)
         {
             isShotGun = false;
         }
+        
+        
         
     }
 

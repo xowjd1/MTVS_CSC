@@ -207,14 +207,25 @@ public class Boss : MonoBehaviour
 
 
     //보스 자폭 공격
-    void BossSuicideAttack()
+    public void BossSuicideAttack()
     {
-        //폭발 이펙트 넣기
+        // 폭발 이펙트 넣기
         GameObject exp = Instantiate(explosion, transform.position, Quaternion.identity);
         // 0.1초 뒤 자폭
-        Destroy(gameObject,0.1f);
+
+        // suicideBombAtk 자식 객체 찾기
+        Transform suicideBomb = transform.Find("suicideBombAtk");
+
+        // suicideBombAtk 분리
+        if (suicideBomb != null)
+        {
+            suicideBomb.parent = null; // 부모 설정을 null로 변경하여 분리
+           
+            // 필요한 추가 작업 수행
+        }
+        Destroy(gameObject, 0.1f);
         suicideATK.gameObject.SetActive(true);
-      
+
     }
     
 }

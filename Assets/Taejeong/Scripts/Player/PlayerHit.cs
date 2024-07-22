@@ -106,6 +106,14 @@ public class PlayerHit : MonoBehaviour
             GameManager.instance.mgDamage += damageUp.mgDamageUpCount;
             isDamageUp = false;
         }
+
+
+        //개발자 모드 쉬프트 누르면 체력 100씩 증가
+        //if (Input.GetButtonDown("Fire3"))
+        //{
+        //    playerLife += 100;
+        //}
+
     }
 
     void OnTriggerEnter(Collider other)

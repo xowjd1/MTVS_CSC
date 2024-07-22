@@ -167,6 +167,7 @@ public class ItemBox : MonoBehaviour
         Destroy(gameObject);
 
     }
+    // 피격시 스케일값 조정
     IEnumerator ScaleBox()
     {
 

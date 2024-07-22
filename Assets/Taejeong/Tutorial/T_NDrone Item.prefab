@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 6679521828352181575}
   m_Layer: 6
   m_Name: T_NDrone Item
-  m_TagString: Untagged
+  m_TagString: TutoBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

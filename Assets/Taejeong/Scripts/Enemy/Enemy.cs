@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     MGBullet mgBullet;
     DroneBullet dBullet;
     Missile missile;
+    Bullet bullet;
     public GameManager gameManager;
     public Rigidbody gameOverDummy; // 게임오버용 더미
     public Rigidbody target;
@@ -18,6 +19,7 @@ public class Enemy : MonoBehaviour
     public int enemyHP = 1;
     public float speed = 5;
 
+    bool isBulletHit = false;
     bool isDroneHit = false; // 드론총알에 맞았는지 여부
     bool isMissileHit = false; // 미사일에 맞았는지 여부
     bool isMGBulletHit = false; // 머신건에 맞았는지 여부
@@ -69,7 +71,16 @@ public class Enemy : MonoBehaviour
                 transform.position += dir * speed * Time.deltaTime;
             
         }
-
+        if (isBulletHit)
+        {
+            enemyHP --;
+            isBulletHit = false; // 데미지를 한번만 받아야하니까 false처리
+            //itemHP 가 0 이하가 되면
+            if (enemyHP <= 0)
+            {
+                EnemyHPMinus(); // 이벤트(함수)를 불러온다.
+            }
+        }
         if (isMGBulletHit)
         {
             enemyHP -= mgBullet.mgDamage;
@@ -105,7 +116,17 @@ public class Enemy : MonoBehaviour
   
     void OnTriggerEnter(Collider other)
     {
-        //기본 총알은 스크립트 머신에 되어있고
+
+        if (other.CompareTag("Bullet"))
+        {
+
+            bullet = other.GetComponent<Bullet>();
+            if (bullet != null)
+            {
+                isBulletHit = true;
+
+            }
+        }
         if (other.CompareTag("DroneBullet"))
         {
 
