@@ -11591,7 +11591,7 @@ PrefabInstance:
     - target: {fileID: -1970710315514739076, guid: f455b7da6a2af404a9e19d6e3e57ddfb,
         type: 3}
       propertyPath: bossHP
-      value: 50
+      value: 7000
       objectReference: {fileID: 0}
     - target: {fileID: -1970710315514739076, guid: f455b7da6a2af404a9e19d6e3e57ddfb,
         type: 3}

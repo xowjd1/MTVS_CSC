@@ -56,7 +56,7 @@ public class ItemBox : MonoBehaviour
 
         else // 튜토리얼이 아니라면 게임진행시간 * 랜덤값으로 체력값을 정해준다.
         {
-            maxItemHP = (int)(GameManager.instance.time * Random.Range(GameManager.instance.randomMin, GameManager.instance.randomMax) + Random.Range(50, 100));
+            maxItemHP = (int)(GameManager.instance.time * Random.Range(GameManager.instance.randomMin, GameManager.instance.randomMax) + Random.Range(80, 120));
             itemHP = maxItemHP;
         }
       

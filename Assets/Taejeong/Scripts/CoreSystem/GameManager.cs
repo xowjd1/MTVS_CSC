@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     public float time;
     public int randomMin;
     public int randomMax;
-    public int bossHP = 5000;
+    public int bossHP = 7000;
 
 
 
