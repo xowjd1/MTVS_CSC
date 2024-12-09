@@ -85,6 +85,9 @@ Development
 <img src="https://img.shields.io/badge/Unity-000000?style=flat-square&logo=Unity&logoColor=white"/> <img src="https://img.shields.io/badge/C%23-239120?style=flat-square&logo=CSharp&logoColor=white"/>  
 Environment  
 <img src="https://img.shields.io/badge/Visual Studio-5C2D91?style=flat-square&logo=Visual Studio&logoColor=white"/> <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=Git&logoColor=white"/>  
-  
+
+담당 스크립트 정리  
+https://github.com/xowjd1/MTVS_LastWarProject/tree/main/Assets/Taejeong/Scripts  
+
 빌드 파일  
 https://drive.google.com/file/d/1vZ7uehgRJe-ARKKhN_7_7ktkTCUUGmbt/view?usp=sharing  
