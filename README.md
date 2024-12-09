@@ -1,5 +1,12 @@
 Last War: SanNabi Version (Reproduction Project)
 
+담당 스크립트 정리  
+https://github.com/xowjd1/MTVS_LastWarProject/tree/main/Assets/Taejeong/Scripts  
+
+빌드 파일  
+https://drive.google.com/file/d/1vZ7uehgRJe-ARKKhN_7_7ktkTCUUGmbt/view?usp=sharing  
+
+
 📖 프로젝트 소개  
 Last War의 산나비 버전을 모작한 3D 액션 게임입니다. 
 
@@ -52,11 +59,7 @@ Development
 Environment  
 <img src="https://img.shields.io/badge/Visual Studio-5C2D91?style=flat-square&logo=Visual Studio&logoColor=white"/> <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=Git&logoColor=white"/>  
 
-담당 스크립트 정리  
-https://github.com/xowjd1/MTVS_LastWarProject/tree/main/Assets/Taejeong/Scripts  
 
-빌드 파일  
-https://drive.google.com/file/d/1vZ7uehgRJe-ARKKhN_7_7ktkTCUUGmbt/view?usp=sharing  
 
 
 
